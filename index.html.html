@@ -710,6 +710,21 @@ body.banner-open .hero{padding-top:128px;}
         <a href="#" class="tool-btn cyan" onclick="openTool('riskreward');return false;">Open Calculator ›</a>
       </div>
 
+      <!-- DCA Calculator -->
+      <div class="tool-card" style="border-color:rgba(0,255,136,.2);background:rgba(0,255,136,.03);">
+        <div class="tool-icon">📉</div>
+        <div class="tool-badge" style="background:rgba(0,255,136,.15);color:#00ff88;border-color:rgba(0,255,136,.4);">FREE TOOL</div>
+        <div class="tool-name">DCA Calculator</div>
+        <div class="tool-desc">Dollar Cost Average like a pro. Track your average cost as you buy more shares, see total invested vs current value, and know your exact profit or loss at every DCA level.</div>
+        <ul class="tool-features">
+          <li>Average cost tracker per buy</li>
+          <li>Total shares owned at each level</li>
+          <li>Total invested vs current value</li>
+          <li>Profit / loss in $ and %</li>
+        </ul>
+        <a href="#" class="tool-btn" style="background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.4);color:#00ff88;" onclick="openTool('dca');return false;">Open Calculator ›</a>
+      </div>
+
       <!-- Alpha Strategy Simulator — PREMIUM -->
       <div class="tool-card gold" style="border-color:rgba(255,215,0,.3);background:rgba(255,215,0,.04);">
         <div class="tool-icon">🔐</div>
@@ -1008,6 +1023,74 @@ body.banner-open .hero{padding-top:128px;}
   </div>
 </div>
 
+<!-- DCA Calculator Modal -->
+<div class="modal-overlay" id="modal-dca" onclick="if(event.target===this)closeTool('dca')">
+  <div class="modal-box" style="max-width:680px;">
+    <div class="modal-header">
+      <div class="modal-title">📉 DCA Calculator</div>
+      <button class="modal-close" onclick="closeTool('dca')">✕</button>
+    </div>
+    <div class="tip-box" style="margin-bottom:20px;background:rgba(0,255,136,.06);border-color:rgba(0,255,136,.25);">
+      <div style="font-family:'Orbitron',monospace;font-size:11px;letter-spacing:3px;color:#00ff88;margin-bottom:4px;">// HOW TO USE</div>
+      <div style="font-family:'Rajdhani',sans-serif;font-size:16px;color:rgba(255,255,255,.6);">Add each buy below. Enter the price you paid and how many shares. The calculator tracks your average cost and total P&L in real time.</div>
+    </div>
+
+    <!-- Current Price Input -->
+    <div style="display:flex;gap:16px;margin-bottom:20px;align-items:flex-end;">
+      <div style="flex:1;">
+        <label class="tool-label">Current Stock Price ($)</label>
+        <input class="tool-input" id="dca-current" type="number" placeholder="6.62" step="0.01" min="0.01" oninput="calcDCA()">
+      </div>
+      <div style="flex:1;">
+        <label class="tool-label">Stock Ticker (optional)</label>
+        <input class="tool-input" id="dca-ticker" type="text" placeholder="UNCY" style="text-transform:uppercase;" oninput="calcDCA()">
+      </div>
+    </div>
+
+    <!-- Buy Entries -->
+    <div style="margin-bottom:16px;">
+      <div style="font-family:'Orbitron',monospace;font-size:11px;letter-spacing:3px;color:#00ff88;margin-bottom:12px;">// YOUR BUYS</div>
+      <div id="dca-entries">
+        <!-- entries injected here -->
+      </div>
+      <button onclick="addDCAEntry()" style="margin-top:10px;background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.3);color:#00ff88;padding:10px 22px;font-family:'Orbitron',monospace;font-size:11px;letter-spacing:3px;cursor:pointer;border-radius:4px;width:100%;">+ ADD BUY</button>
+    </div>
+
+    <!-- Results -->
+    <div class="results-panel" id="dca-results" style="display:none;border-color:rgba(0,255,136,.2);background:rgba(0,255,136,.04);">
+      <div class="results-grid">
+        <div class="result-box"><div class="result-label">Avg Cost / Share</div><div class="result-val" style="color:#00ff88;" id="dca-avgcost">—</div></div>
+        <div class="result-box"><div class="result-label">Total Shares</div><div class="result-val white" id="dca-totalshares">—</div></div>
+        <div class="result-box"><div class="result-label">Total Invested</div><div class="result-val white" id="dca-invested">—</div></div>
+        <div class="result-box"><div class="result-label">Current Value</div><div class="result-val" style="color:#00f5ff;" id="dca-value">—</div></div>
+        <div class="result-box"><div class="result-label">Profit / Loss $</div><div class="result-val" id="dca-pnl">—</div></div>
+        <div class="result-box"><div class="result-label">Profit / Loss %</div><div class="result-val" id="dca-pnlpct">—</div></div>
+      </div>
+      <div id="dca-verdict" class="result-verdict" style="margin-top:12px;"></div>
+    </div>
+
+    <!-- DCA Table -->
+    <div id="dca-table-wrap" style="display:none;margin-top:16px;">
+      <div style="font-family:'Orbitron',monospace;font-size:11px;letter-spacing:3px;color:#00ff88;margin-bottom:10px;">// BUY LOG</div>
+      <div style="overflow-x:auto;">
+        <table id="dca-table" style="width:100%;border-collapse:collapse;font-family:'Rajdhani',sans-serif;font-size:15px;">
+          <thead>
+            <tr style="border-bottom:1px solid rgba(0,255,136,.2);">
+              <th style="text-align:left;padding:8px 10px;font-family:'Orbitron',monospace;font-size:10px;letter-spacing:2px;color:rgba(0,255,136,.6);">BUY #</th>
+              <th style="text-align:right;padding:8px 10px;font-family:'Orbitron',monospace;font-size:10px;letter-spacing:2px;color:rgba(0,255,136,.6);">PRICE</th>
+              <th style="text-align:right;padding:8px 10px;font-family:'Orbitron',monospace;font-size:10px;letter-spacing:2px;color:rgba(0,255,136,.6);">SHARES</th>
+              <th style="text-align:right;padding:8px 10px;font-family:'Orbitron',monospace;font-size:10px;letter-spacing:2px;color:rgba(0,255,136,.6);">INVESTED</th>
+              <th style="text-align:right;padding:8px 10px;font-family:'Orbitron',monospace;font-size:10px;letter-spacing:2px;color:rgba(0,255,136,.6);">AVG COST</th>
+              <th style="text-align:right;padding:8px 10px;font-family:'Orbitron',monospace;font-size:10px;letter-spacing:2px;color:rgba(0,255,136,.6);">TOTAL SHARES</th>
+            </tr>
+          </thead>
+          <tbody id="dca-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Risk/Reward Modal -->
 <div class="modal-overlay" id="modal-riskreward">
   <div class="modal">
@@ -1089,6 +1172,138 @@ document.querySelectorAll('.modal-overlay').forEach(el => {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(el => el.classList.remove('open'));
 });
+
+// ── DCA CALCULATOR ────────────────────────────────────────────────────────────
+let dcaEntries = [];
+
+function initDCA() {
+  dcaEntries = [];
+  document.getElementById('dca-entries').innerHTML = '';
+  document.getElementById('dca-results').style.display = 'none';
+  document.getElementById('dca-table-wrap').style.display = 'none';
+  addDCAEntry();
+  addDCAEntry();
+}
+
+function addDCAEntry() {
+  const idx = dcaEntries.length;
+  dcaEntries.push({ price: '', shares: '' });
+  const wrap = document.createElement('div');
+  wrap.id = 'dca-row-' + idx;
+  wrap.style.cssText = 'display:flex;gap:12px;margin-bottom:10px;align-items:flex-end;';
+  wrap.innerHTML = `
+    <div style="flex:1;">
+      <label class="tool-label">Buy #${idx + 1} — Price ($)</label>
+      <input class="tool-input" type="number" placeholder="2.24" step="0.01" min="0.01"
+        onchange="dcaEntries[${idx}].price=this.value;calcDCA()"
+        oninput="dcaEntries[${idx}].price=this.value;calcDCA()">
+    </div>
+    <div style="flex:1;">
+      <label class="tool-label">Shares</label>
+      <input class="tool-input" type="number" placeholder="100" min="1" step="1"
+        onchange="dcaEntries[${idx}].shares=this.value;calcDCA()"
+        oninput="dcaEntries[${idx}].shares=this.value;calcDCA()">
+    </div>
+    <button onclick="removeDCAEntry(${idx})" style="background:rgba(255,60,80,.1);border:1px solid rgba(255,60,80,.3);color:#ff3c50;width:38px;height:44px;border-radius:4px;cursor:pointer;font-size:16px;flex-shrink:0;margin-bottom:1px;">✕</button>
+  `;
+  document.getElementById('dca-entries').appendChild(wrap);
+}
+
+function removeDCAEntry(idx) {
+  dcaEntries[idx] = { price: '', shares: '', removed: true };
+  const row = document.getElementById('dca-row-' + idx);
+  if (row) row.style.display = 'none';
+  calcDCA();
+}
+
+function calcDCA() {
+  const currentPrice = parseFloat(document.getElementById('dca-current').value);
+  const ticker = (document.getElementById('dca-ticker').value || 'STOCK').toUpperCase();
+  const validEntries = dcaEntries.filter(e => !e.removed && parseFloat(e.price) > 0 && parseFloat(e.shares) > 0);
+  if (validEntries.length === 0) {
+    document.getElementById('dca-results').style.display = 'none';
+    document.getElementById('dca-table-wrap').style.display = 'none';
+    return;
+  }
+
+  let totalInvested = 0;
+  let totalShares = 0;
+  let runningInvested = 0;
+  let runningShares = 0;
+  const rows = [];
+
+  validEntries.forEach((e, i) => {
+    const price = parseFloat(e.price);
+    const shares = parseFloat(e.shares);
+    const cost = price * shares;
+    runningInvested += cost;
+    runningShares += shares;
+    totalInvested += cost;
+    totalShares += shares;
+    const avgCost = runningInvested / runningShares;
+    rows.push({ num: i + 1, price, shares, cost, avgCost, runningShares });
+  });
+
+  const avgCost = totalInvested / totalShares;
+
+  // Results
+  document.getElementById('dca-results').style.display = 'block';
+  document.getElementById('dca-avgcost').textContent = '$' + avgCost.toFixed(4);
+  document.getElementById('dca-totalshares').textContent = totalShares.toLocaleString(undefined, {maximumFractionDigits: 4});
+  document.getElementById('dca-invested').textContent = '$' + totalInvested.toFixed(2);
+
+  if (!isNaN(currentPrice) && currentPrice > 0) {
+    const currentValue = totalShares * currentPrice;
+    const pnl = currentValue - totalInvested;
+    const pnlPct = (pnl / totalInvested) * 100;
+    document.getElementById('dca-value').textContent = '$' + currentValue.toFixed(2);
+    const pnlEl = document.getElementById('dca-pnl');
+    const pnlPctEl = document.getElementById('dca-pnlpct');
+    pnlEl.textContent = (pnl >= 0 ? '+$' : '-$') + Math.abs(pnl).toFixed(2);
+    pnlEl.style.color = pnl >= 0 ? '#00ff88' : '#ff3c50';
+    pnlPctEl.textContent = (pnlPct >= 0 ? '+' : '') + pnlPct.toFixed(2) + '%';
+    pnlPctEl.style.color = pnl >= 0 ? '#00ff88' : '#ff3c50';
+
+    const verdict = document.getElementById('dca-verdict');
+    if (pnl >= 0) {
+      verdict.className = 'result-verdict verdict-good';
+      verdict.textContent = `✅ ${ticker} is UP on your position!! Avg cost $${avgCost.toFixed(4)} vs current $${currentPrice.toFixed(2)} — you are profitable!!`;
+    } else {
+      verdict.className = 'result-verdict verdict-ok';
+      verdict.textContent = `📉 ${ticker} is below your avg cost of $${avgCost.toFixed(4)}. Current price $${currentPrice.toFixed(2)} — still building your position!!`;
+    }
+  } else {
+    document.getElementById('dca-value').textContent = '—';
+    document.getElementById('dca-pnl').textContent = '—';
+    document.getElementById('dca-pnlpct').textContent = '—';
+    document.getElementById('dca-verdict').textContent = '';
+  }
+
+  // Table
+  document.getElementById('dca-table-wrap').style.display = 'block';
+  const tbody = document.getElementById('dca-tbody');
+  tbody.innerHTML = '';
+  rows.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.style.borderBottom = '1px solid rgba(255,255,255,.05)';
+    tr.innerHTML = `
+      <td style="padding:9px 10px;color:rgba(255,255,255,.5);">Buy #${r.num}</td>
+      <td style="padding:9px 10px;text-align:right;color:#ffd700;">$${r.price.toFixed(4)}</td>
+      <td style="padding:9px 10px;text-align:right;color:#fff;">${r.shares.toLocaleString()}</td>
+      <td style="padding:9px 10px;text-align:right;color:rgba(255,255,255,.7);">$${r.cost.toFixed(2)}</td>
+      <td style="padding:9px 10px;text-align:right;color:#00ff88;font-weight:700;">$${r.avgCost.toFixed(4)}</td>
+      <td style="padding:9px 10px;text-align:right;color:#00f5ff;">${r.runningShares.toLocaleString()}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+// Init DCA when modal opens
+const _origOpenTool = window.openTool;
+window.openTool = function(id) {
+  if (id === 'dca') initDCA();
+  _origOpenTool(id);
+};
 
 // ── POSITION SIZER ────────────────────────────────────────────────────────────
 function calcPositionSize() {
