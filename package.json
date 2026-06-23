@@ -1,0 +1,10 @@
+{
+  "name": "alphadesk-simulator",
+  "version": "1.0.0",
+  "description": "AlphaDesk Capital — Bible v1.0 Backtest Simulator",
+  "private": true,
+  "devDependencies": {
+    "@netlify/functions": "^2.0.0",
+    "typescript": "^5.0.0"
+  }
+}
