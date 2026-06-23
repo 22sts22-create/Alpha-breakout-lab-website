@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlphaDesk Capital — Simulator</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg:        #0a0e14;
+      --surface:   #111720;
+      --border:    #1e2a3a;
+      --accent:    #00c896;
+      --accent2:   #0080ff;
+      --red:       #ff4d6a;
+      --text:      #d4dce8;
+      --muted:     #5a6a7e;
+      --win:       #00c896;
+      --loss:      #ff4d6a;
+      --font-mono: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+      --font-ui:   "Inter", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-ui); min-height: 100vh; padding: 0 0 60px; }
+    header { border-bottom: 1px solid var(--border); padding: 20px 32px; display: flex; align-items: center; gap: 16px; }
+    .logo-mark { width: 36px; height: 36px; background: var(--accent); clip-path: polygon(50% 0%, 100% 100%, 0% 100%); flex-shrink: 0; }
+    header h1 { font-family: var(--font-mono); font-size: 1rem; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; }
+    header p { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; margin-top: 2px; }
+    .search-wrap { max-width: 600px; margin: 48px auto 0; padding: 0 24px; }
+    .search-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; margin-bottom: 10px; }
+    .search-row { display: flex; gap: 10px; }
+    #tickerInput { flex: 1; background: var(--surface); border: 1px solid var(--border); color: var(--text); font-family: var(--font-mono); font-size: 1.3rem; letter-spacing: 0.08em; padding: 14px 18px; outline: none; text-transform: uppercase; transition: border-color 0.2s; }
+    #tickerInput:focus { border-color: var(--accent); }
+    #tickerInput::placeholder { color: var(--muted); font-size: 1rem; }
+    #runBtn { background: var(--accent); color: #000; border: none; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; padding: 14px 24px; cursor: pointer; text-transform: uppercase; transition: opacity 0.15s; white-space: nowrap; }
+    #runBtn:hover { opacity: 0.85; }
+    #runBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+    #status { max-width: 600px; margin: 14px auto 0; padding: 0 24px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); min-height: 20px; }
+    #status.error { color: var(--red); }
+    #status.loading { color: var(--accent2); }
+    #results { max-width: 1100px; margin: 48px auto 0; padding: 0 24px; display: none; }
+    .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 36px; }
+    .card { background: var(--surface); border: 1px solid var(--border); padding: 18px 20px; }
+    .card-label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+    .card-value { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--text); }
+    .card-value.pos { color: var(--win); }
+    .card-value.neg { color: var(--loss); }
+    .chart-section { margin-bottom: 36px; }
+    .section-title { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+    .chart-box { background: var(--surface); border: 1px solid var(--border); padding: 20px; position: relative; }
+    .chart-box canvas { width: 100% !important; }
+    .trade-table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 0.75rem; }
+    th { text-align: left; padding: 10px 14px; color: var(--muted); letter-spacing: 0.1em; font-size: 0.65rem; text-transform: uppercase; border-bottom: 1px solid var(--border); white-space: nowrap; }
+    td { padding: 9px 14px; border-bottom: 1px solid #161f2a; white-space: nowrap; }
+    tr:hover td { background: #141d28; }
+    .win-badge { display: inline-block; padding: 2px 8px; font-size: 0.62rem; letter-spacing: 0.1em; font-weight: 700; }
+    .win-badge.w { background: rgba(0,200,150,0.12); color: var(--win); }
+    .win-badge.l { background: rgba(255,77,106,0.12); color: var(--loss); }
+    .footer-note { text-align: center; font-size: 0.68rem; color: var(--muted); margin-top: 48px; font-family: var(--font-mono); letter-spacing: 0.06em; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo-mark"></div>
+  <div>
+    <h1>AlphaDesk Capital</h1>
+    <p>Bible v1.0 · MA15/65/200 · Dynamic Trail · 30-min bars</p>
+  </div>
+</header>
+<div class="search-wrap">
+  <div class="search-label">Enter ticker to backtest</div>
+  <div class="search-row">
+    <input id="tickerInput" type="text" placeholder="ASTS, PLTR, NVDA..." maxlength="10" />
+    <button id="runBtn">Run Backtest</button>
+  </div>
+</div>
+<div id="status"></div>
+<div id="results">
+  <div class="summary-grid" id="summaryGrid"></div>
+  <div class="chart-section">
+    <div class="section-title">Equity Curve</div>
+    <div class="chart-box"><canvas id="equityChart" height="280"></canvas></div>
+  </div>
+  <div class="chart-section">
+    <div class="section-title">Price + MA Overlay</div>
+    <div class="chart-box"><canvas id="priceChart" height="280"></canvas></div>
+  </div>
+  <div class="chart-section">
+    <div class="section-title">Trade Log</div>
+    <div class="chart-box trade-table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Entry</th><th>Exit</th><th>Entry $</th><th>Exit $</th><th>Shares</th><th>P&L</th><th>Return</th><th>Exit Reason</th><th>Result</th></tr></thead>
+        <tbody id="tradeBody"></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="footer-note">AlphaDesk Capital · Strategy is proprietary · Past performance does not guarantee future results</div>
+</div>
+<script>
+  let equityChartInst = null, priceChartInst = null;
+  const tickerInput = document.getElementById("tickerInput");
+  const runBtn      = document.getElementById("runBtn");
+  const statusEl    = document.getElementById("status");
+  const resultsEl   = document.getElementById("results");
+
+  function setStatus(msg, cls = "") { statusEl.textContent = msg; statusEl.className = cls; }
+  function fmt$(n) { return (n >= 0 ? "+" : "") + "$" + Math.abs(n).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+
+  async function runBacktest() {
+    const ticker = tickerInput.value.trim().toUpperCase();
+    if (!ticker) { setStatus("Enter a ticker first.", "error"); return; }
+    runBtn.disabled = true;
+    resultsEl.style.display = "none";
+    setStatus(`Fetching ${ticker} data from Twelve Data...`, "loading");
+    try {
+      const res  = await fetch(`/api/backtest?ticker=${ticker}`);
+      const data = await res.json();
+      if (data.error) { setStatus(data.error, "error"); runBtn.disabled = false; return; }
+      setStatus(`${data.bars.length.toLocaleString()} bars loaded · ${data.summary.totalTrades} trades found`);
+      renderResults(data);
+      resultsEl.style.display = "block";
+    } catch (e) { setStatus("Network error — is the function running?", "error"); }
+    runBtn.disabled = false;
+  }
+
+  function renderResults(data) {
+    const s = data.summary;
+    const cards = [
+      { label: "Ticker",       value: data.ticker,                                              cls: "" },
+      { label: "Total Return", value: (s.returnPct >= 0 ? "+" : "") + s.returnPct + "%",        cls: s.returnPct >= 0 ? "pos" : "neg" },
+      { label: "Total P&L",    value: fmt$(s.totalPnl),                                         cls: s.totalPnl >= 0 ? "pos" : "neg" },
+      { label: "$4K →",        value: "$" + s.endCapital.toLocaleString(),                      cls: s.totalPnl >= 0 ? "pos" : "neg" },
+      { label: "Win Rate",     value: s.winRate + "%",                                          cls: s.winRate >= 50 ? "pos" : "" },
+      { label: "Trades",       value: s.totalTrades,                                            cls: "" },
+      { label: "Avg Win",      value: fmt$(s.avgWin),                                           cls: "pos" },
+      { label: "Avg Loss",     value: fmt$(s.avgLoss),                                          cls: "neg" },
+    ];
+    document.getElementById("summaryGrid").innerHTML = cards.map(c =>
+      `<div class="card"><div class="card-label">${c.label}</div><div class="card-value ${c.cls}">${c.value}</div></div>`
+    ).join("");
+
+    const eqLabels = data.bars.slice(data.bars.length - data.equity.length).map(b => b.date.slice(0, 10));
+    if (equityChartInst) equityChartInst.destroy();
+    equityChartInst = new Chart(document.getElementById("equityChart"), {
+      type: "line",
+      data: { labels: eqLabels, datasets: [{ label: "Portfolio Value", data: data.equity, borderColor: "#00c896", borderWidth: 1.5, pointRadius: 0, fill: true, backgroundColor: "rgba(0,200,150,0.06)", tension: 0.1 }] },
+      options: chartOpts("$")
+    });
+
+    const priceSlice = data.bars.slice(-500);
+    if (priceChartInst) priceChartInst.destroy();
+    priceChartInst = new Chart(document.getElementById("priceChart"), {
+      type: "line",
+      data: { labels: priceSlice.map(b => b.date.slice(0, 10)), datasets: [{ label: "Close", data: priceSlice.map(b => b.close), borderColor: "#d4dce8", borderWidth: 1.2, pointRadius: 0, tension: 0.1 }] },
+      options: chartOpts("$")
+    });
+
+    document.getElementById("tradeBody").innerHTML = data.trades.map((t, i) =>
+      `<tr>
+        <td>${i+1}</td>
+        <td>${t.entryDate.slice(0,16)}</td>
+        <td>${t.exitDate.slice(0,16)}</td>
+        <td>$${t.entryPrice.toFixed(2)}</td>
+        <td>$${t.exitPrice.toFixed(2)}</td>
+        <td>${t.shares}</td>
+        <td style="color:${t.win ? "var(--win)" : "var(--loss)"}">${fmt$(t.pnl)}</td>
+        <td style="color:${t.win ? "var(--win)" : "var(--loss)"}">${(t.pnlPct >= 0 ? "+" : "") + t.pnlPct.toFixed(1)}%</td>
+        <td>${t.exitReason}</td>
+        <td><span class="win-badge ${t.win ? "w" : "l"}">${t.win ? "WIN" : "LOSS"}</span></td>
+      </tr>`
+    ).join("");
+  }
+
+  function chartOpts(prefix) {
+    return {
+      responsive: true, animation: false,
+      plugins: { legend: { display: false }, tooltip: { backgroundColor: "#111720", borderColor: "#1e2a3a", borderWidth: 1, titleColor: "#5a6a7e", bodyColor: "#d4dce8", titleFont: { family: "monospace", size: 10 }, bodyFont: { family: "monospace", size: 12 }, callbacks: { label: ctx => `  ${prefix}${ctx.parsed.y.toFixed(2)}` } } },
+      scales: {
+        x: { ticks: { color: "#5a6a7e", font: { family: "monospace", size: 9 }, maxTicksLimit: 8 }, grid: { color: "#1a2433" } },
+        y: { ticks: { color: "#5a6a7e", font: { family: "monospace", size: 9 }, callback: v => prefix + v.toLocaleString() }, grid: { color: "#1a2433" } }
+      }
+    };
+  }
+
+  runBtn.addEventListener("click", runBacktest);
+  tickerInput.addEventListener("keydown", e => { if (e.key === "Enter") runBacktest(); });
+</script>
+</body>
+</html>
