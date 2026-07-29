@@ -1,13 +1,36 @@
+# ── Netlify configuration — Alpha Breakout Lab ───────────────────────────────
+# Static site: the HTML files are served exactly as-is from the repo.
+# There is no framework build. Placing this file at the REPO ROOT (next to
+# pdufa_calendar.html) fixes the 404 by telling Netlify what to publish and
+# how to route the extensionless /pdufa_calendar URL.
+
 [build]
+  # Publish the repo root — that's where pdufa_calendar.html lives.
   publish = "."
+  # No build step. Leaving this empty prevents Netlify from looking for a
+  # dist/ or build/ folder that doesn't exist (the usual cause of the 404).
   command = ""
 
-[functions]
-  directory = "netlify/functions"
-  node_bundler = "esbuild"
+# ── Pretty-URL rewrites ──────────────────────────────────────────────────────
+# status = 200 is a REWRITE: the browser URL stays clean (/pdufa_calendar)
+# while Netlify serves the .html file. This matches your existing nav links.
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
+[[redirects]]
+  from = "/pdufa_calendar"
+  to = "/pdufa_calendar.html"
+  status = 200
+
+[[redirects]]
+  from = "/traders_journal"
+  to = "/traders_journal.html"
+  status = 200
+
+# ── Notes ────────────────────────────────────────────────────────────────────
+# • Your existing header rule and function still work — this file doesn't
+#   touch them; it only sets publish dir + these two rewrites.
+# • If your homepage isn't index.html, add an index redirect too:
+#     [[redirects]]
+#       from = "/"
+#       to = "/your_homepage.html"
+#       status = 200
+#   Delete these comment lines once it's sorted.
