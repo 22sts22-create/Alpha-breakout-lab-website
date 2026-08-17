@@ -422,6 +422,24 @@ def extract_existing_tickers(html_content):
     return tickers
 
 
+def js_escape(value):
+    """Escape a Python string so it is a SAFE JavaScript double-quoted string literal.
+    Handles backslashes, quotes, newlines, tabs, and other control chars that would
+    otherwise produce 'Invalid or unexpected token' and break the whole <script>."""
+    if value is None:
+        return ""
+    s = str(value)
+    s = s.replace("\\", "\\\\")   # backslash FIRST
+    s = s.replace('"', '\\"')     # double quotes
+    s = s.replace("\n", " ")      # collapse newlines to spaces (cleaner than \\n in a data field)
+    s = s.replace("\r", " ")
+    s = s.replace("\t", " ")
+    s = s.replace("\u2028", " ")  # JS line separator
+    s = s.replace("\u2029", " ")  # JS paragraph separator
+    s = " ".join(s.split())        # collapse any runs of whitespace
+    return s
+
+
 def inject_new_entries(html_content, new_entries):
     """Safely inject new entries into the PDUFA_DATA array in the HTML.
 
@@ -461,21 +479,19 @@ def inject_new_entries(html_content, new_entries):
     # Build new entry strings.
     new_js_entries = []
     for entry in new_entries:
-        company = entry["company"].replace('"', "'")
-        notes = entry["notes"].replace('"', "'")
         js_entry = f"""  {{
-    month: "{entry['month']}",
-    monthColor: "{entry['monthColor']}",
-    date: "{entry['date']}",
-    isoDate: "{entry['isoDate']}",
-    ticker: "{entry['ticker']}",
-    company: "{company}",
-    drug: "{entry['drug']}",
-    indication: "{entry['indication']}",
-    cap: "{entry['cap']}",
-    risk: "{entry['risk']}",
-    notes: "{notes}",
-    type: "{entry['type']}"
+    month: "{js_escape(entry['month'])}",
+    monthColor: "{js_escape(entry['monthColor'])}",
+    date: "{js_escape(entry['date'])}",
+    isoDate: "{js_escape(entry['isoDate'])}",
+    ticker: "{js_escape(entry['ticker'])}",
+    company: "{js_escape(entry['company'])}",
+    drug: "{js_escape(entry['drug'])}",
+    indication: "{js_escape(entry['indication'])}",
+    cap: "{js_escape(entry['cap'])}",
+    risk: "{js_escape(entry['risk'])}",
+    notes: "{js_escape(entry['notes'])}",
+    type: "{js_escape(entry['type'])}"
   }}"""
         new_js_entries.append(js_entry)
 
