@@ -731,6 +731,35 @@ header {
   </div>
 </div>
 
+<!-- PERFORMANCE CHARTS -->
+<div style="max-width:1400px;margin:24px auto 40px;padding:0 24px;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+    <div style="font-size:15px;letter-spacing:2px;color:var(--cyan);font-weight:700;">📈 PERFORMANCE</div>
+    <div style="flex:1;height:1px;background:rgba(148,163,184,.15);"></div>
+  </div>
+  <div id="charts-empty" style="display:none;text-align:center;padding:40px;color:var(--muted);font-size:13px;">
+    No trades logged yet — charts will appear here once you log trades.
+  </div>
+  <div id="charts-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+    <div style="background:var(--panel);border:1px solid rgba(148,163,184,.12);border-radius:10px;padding:16px;">
+      <div style="font-size:12px;letter-spacing:1px;color:var(--muted);margin-bottom:12px;">CUMULATIVE P&L (EQUITY CURVE)</div>
+      <div id="chart-equity"></div>
+    </div>
+    <div style="background:var(--panel);border:1px solid rgba(148,163,184,.12);border-radius:10px;padding:16px;">
+      <div style="font-size:12px;letter-spacing:1px;color:var(--muted);margin-bottom:12px;">WINS vs LOSSES</div>
+      <div id="chart-winloss"></div>
+    </div>
+    <div style="background:var(--panel);border:1px solid rgba(148,163,184,.12);border-radius:10px;padding:16px;">
+      <div style="font-size:12px;letter-spacing:1px;color:var(--muted);margin-bottom:12px;">P&L BY SETUP TYPE</div>
+      <div id="chart-setup"></div>
+    </div>
+    <div style="background:var(--panel);border:1px solid rgba(148,163,184,.12);border-radius:10px;padding:16px;">
+      <div style="font-size:12px;letter-spacing:1px;color:var(--muted);margin-bottom:12px;">P&L BY TICKER</div>
+      <div id="chart-ticker"></div>
+    </div>
+  </div>
+</div>
+
 <!-- TRADE MODAL -->
 <div class="modal-overlay" id="trade-modal">
   <div class="modal">
@@ -1118,6 +1147,7 @@ function renderCalendar() {
   renderReminders();
   if (selectedDate) renderDayDetail(selectedDate);
   renderWeeklySummary();
+  renderCharts();
 }
 
 function selectDay(dateStr, dayNum, isOther) {
@@ -1308,6 +1338,95 @@ function getWeeksOfMonth(year, month) {
   }
   if (week.dates.length > 0) weeks.push(week);
   return weeks;
+}
+
+// ═══════════════════════════════════════════════════════
+// PERFORMANCE CHARTS (pure SVG, no library)
+// ═══════════════════════════════════════════════════════
+function renderCharts() {
+  const trades = loadTrades().filter(t => typeof t.pnl === 'number');
+  const empty = document.getElementById('charts-empty');
+  const grid = document.getElementById('charts-grid');
+  if (!trades.length) { if(empty) empty.style.display='block'; if(grid) grid.style.display='none'; return; }
+  if(empty) empty.style.display='none'; if(grid) grid.style.display='grid';
+
+  const GREEN='#22c55e', RED='#ef4444', CYAN='#38bdf8', MUTED='#94a3b8';
+  const esc = s => String(s).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+
+  // ---- 1. Equity curve (cumulative P&L, trades in date order) ----
+  const sorted = [...trades].sort((a,b)=> (a.date||'').localeCompare(b.date||''));
+  let cum=0; const pts=sorted.map(t=>{cum+=t.pnl; return cum;});
+  (function(){
+    const W=500,H=220,pad=36;
+    const min=Math.min(0,...pts), max=Math.max(0,...pts);
+    const range=(max-min)||1;
+    const x=i=> pad + (pts.length<=1?0:i*(W-pad*2)/(pts.length-1));
+    const y=v=> H-pad - (v-min)/range*(H-pad*2);
+    const zeroY=y(0);
+    let path=''; pts.forEach((v,i)=>{ path+=(i===0?'M':'L')+x(i).toFixed(1)+','+y(v).toFixed(1)+' '; });
+    const last=pts[pts.length-1];
+    const lineCol = last>=0?GREEN:RED;
+    let svg=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="overflow:visible;">`;
+    svg+=`<line x1="${pad}" y1="${zeroY}" x2="${W-pad}" y2="${zeroY}" stroke="${MUTED}" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>`;
+    svg+=`<path d="${path}" fill="none" stroke="${lineCol}" stroke-width="2"/>`;
+    // end dot + label
+    svg+=`<circle cx="${x(pts.length-1)}" cy="${y(last)}" r="3.5" fill="${lineCol}"/>`;
+    svg+=`<text x="${pad}" y="14" fill="${MUTED}" font-size="10">$${max.toFixed(0)}</text>`;
+    svg+=`<text x="${pad}" y="${H-pad+14}" fill="${MUTED}" font-size="10">$${min.toFixed(0)}</text>`;
+    svg+=`<text x="${W-pad}" y="${y(last)-8}" fill="${lineCol}" font-size="11" text-anchor="end" font-weight="700">${last>=0?'+':''}$${last.toFixed(0)}</text>`;
+    svg+=`</svg>`;
+    document.getElementById('chart-equity').innerHTML=svg;
+  })();
+
+  // ---- 2. Wins vs Losses (donut + counts) ----
+  (function(){
+    const wins=trades.filter(t=>t.pnl>0).length;
+    const losses=trades.filter(t=>t.pnl<0).length;
+    const flat=trades.filter(t=>t.pnl===0).length;
+    const total=wins+losses+flat;
+    const wr= total? (wins/total*100):0;
+    const C=90, r=60, sw=22, circ=2*Math.PI*r;
+    const winFrac=wins/total, lossFrac=losses/total;
+    let svg=`<svg viewBox="0 0 ${C*2} ${C*2}" width="60%" style="display:block;margin:0 auto;">`;
+    svg+=`<circle cx="${C}" cy="${C}" r="${r}" fill="none" stroke="rgba(148,163,184,.15)" stroke-width="${sw}"/>`;
+    // wins arc
+    svg+=`<circle cx="${C}" cy="${C}" r="${r}" fill="none" stroke="${GREEN}" stroke-width="${sw}" stroke-dasharray="${(winFrac*circ).toFixed(1)} ${circ}" transform="rotate(-90 ${C} ${C})"/>`;
+    // losses arc (after wins)
+    svg+=`<circle cx="${C}" cy="${C}" r="${r}" fill="none" stroke="${RED}" stroke-width="${sw}" stroke-dasharray="${(lossFrac*circ).toFixed(1)} ${circ}" stroke-dashoffset="${(-winFrac*circ).toFixed(1)}" transform="rotate(-90 ${C} ${C})"/>`;
+    svg+=`<text x="${C}" y="${C-2}" fill="#fff" font-size="30" text-anchor="middle" font-weight="700">${wr.toFixed(0)}%</text>`;
+    svg+=`<text x="${C}" y="${C+18}" fill="${MUTED}" font-size="12" text-anchor="middle">win rate</text>`;
+    svg+=`</svg>`;
+    svg+=`<div style="display:flex;justify-content:center;gap:18px;margin-top:10px;font-size:12px;">
+      <span style="color:${GREEN};">● ${wins} wins</span>
+      <span style="color:${RED};">● ${losses} losses</span>
+      ${flat?`<span style="color:${MUTED};">● ${flat} flat</span>`:''}
+    </div>`;
+    document.getElementById('chart-winloss').innerHTML=svg;
+  })();
+
+  // ---- 3 & 4. Horizontal bar charts: P&L by setup, by ticker ----
+  function barChart(elId, groupKey){
+    const groups={};
+    trades.forEach(t=>{ const k=t[groupKey]||'—'; groups[k]=(groups[k]||0)+t.pnl; });
+    const entries=Object.entries(groups).sort((a,b)=>b[1]-a[1]);
+    const maxAbs=Math.max(1,...entries.map(e=>Math.abs(e[1])));
+    let html='<div style="display:flex;flex-direction:column;gap:8px;">';
+    entries.forEach(([k,v])=>{
+      const pct=Math.abs(v)/maxAbs*100;
+      const col=v>=0?GREEN:RED;
+      html+=`<div style="display:flex;align-items:center;gap:8px;font-size:12px;">
+        <div style="width:70px;color:${MUTED};text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(k)}</div>
+        <div style="flex:1;background:rgba(148,163,184,.08);border-radius:3px;height:16px;position:relative;">
+          <div style="width:${pct}%;background:${col};height:100%;border-radius:3px;opacity:.85;"></div>
+        </div>
+        <div style="width:64px;color:${col};text-align:right;font-weight:600;">${v>=0?'+':''}$${v.toFixed(0)}</div>
+      </div>`;
+    });
+    html+='</div>';
+    document.getElementById(elId).innerHTML=html;
+  }
+  barChart('chart-setup','setup');
+  barChart('chart-ticker','ticker');
 }
 
 // ═══════════════════════════════════════════════════════
