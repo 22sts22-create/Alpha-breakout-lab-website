@@ -643,6 +643,9 @@ header {
       <div class="stat-value neutral" id="stat-system">—</div>
     </div>
     <div class="stats-right">
+      <button class="btn" style="border-color:var(--cyan);color:var(--cyan);background:rgba(56,189,248,.08);" onclick="exportJournal()" title="Download a backup file of all your trades and reminders">⬇ Export</button>
+      <button class="btn" style="border-color:var(--muted);color:var(--muted);background:rgba(148,163,184,.06);" onclick="document.getElementById('import-file').click()" title="Restore from a backup file">⬆ Import</button>
+      <input type="file" id="import-file" accept=".json,application/json" style="display:none;" onchange="importJournal(event)">
       <button class="btn btn-gold" onclick="openReminderModal()">🔔 Add Reminder</button>
       <button class="btn btn-green" onclick="openTradeModal()">＋ Log Trade</button>
     </div>
@@ -869,6 +872,61 @@ header {
 // ═══════════════════════════════════════════════════════
 const TRADES_KEY = 'abl_trades';
 const REMINDERS_KEY = 'abl_reminders';
+
+// ── BACKUP: export / import ──────────────────────────────────────
+function exportJournal() {
+  try {
+    const backup = {
+      app: "Alpha Breakout Lab Trading Journal",
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      trades: JSON.parse(localStorage.getItem(TRADES_KEY)) || [],
+      reminders: JSON.parse(localStorage.getItem(REMINDERS_KEY)) || []
+    };
+    const blob = new Blob([JSON.stringify(backup, null, 2)], {type: "application/json"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    const d = new Date();
+    const stamp = d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+    a.href = url;
+    a.download = "journal_backup_" + stamp + ".json";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  } catch (e) {
+    alert("Export failed: " + e.message);
+  }
+}
+
+function importJournal(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (!data || !Array.isArray(data.trades)) {
+        alert("This doesn't look like a valid journal backup file.");
+        return;
+      }
+      const tCount = data.trades.length;
+      const rCount = Array.isArray(data.reminders) ? data.reminders.length : 0;
+      const ok = confirm(
+        "Import this backup?\n\n" +
+        tCount + " trades and " + rCount + " reminders will REPLACE everything currently in this journal.\n\n" +
+        "Tip: Export your current data first if you want to keep it. This cannot be undone."
+      );
+      if (!ok) { event.target.value = ""; return; }
+      localStorage.setItem(TRADES_KEY, JSON.stringify(data.trades));
+      localStorage.setItem(REMINDERS_KEY, JSON.stringify(data.reminders || []));
+      alert("Imported " + tCount + " trades and " + rCount + " reminders. Reloading…");
+      location.reload();
+    } catch (err) {
+      alert("Import failed — the file couldn't be read: " + err.message);
+    }
+    event.target.value = "";
+  };
+  reader.readAsText(file);
+}
 
 function loadTrades() {
   try { return JSON.parse(localStorage.getItem(TRADES_KEY)) || []; }
