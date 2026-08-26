@@ -1,0 +1,2 @@
+# Force www -> non-www (canonical domain: alphabreakoutlab.com)
+https://www.alphabreakoutlab.com/*   https://alphabreakoutlab.com/:splat   301!
