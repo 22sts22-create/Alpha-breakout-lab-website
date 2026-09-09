@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TS50K2HGX3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TS50K2HGX3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time in the Market Beats Timing the Market — We Tested It | Alpha Breakout Lab</title>
+<meta name="description" content="We ran the backtests ourselves on dozens of stocks: consistent investing beats waiting for dips and even beats doubling-up on dips. Here's the data behind 'time in the market beats timing the market.'">
+<link rel="canonical" href="https://alphabreakoutlab.com/time-in-market.html">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#080B14;--bg2:#0d1220;--card:#111827;--accent:#7C3AED;--accent2:#06B6D4;--green:#10B981;--red:#ef4444;--fg:#E2E8F0;--muted:#64748B;--line:rgba(148,163,184,.12);}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--fg);font-family:'DM Sans',sans-serif;line-height:1.7;}
+  a{color:var(--accent2);text-decoration:none;} a:hover{text-decoration:underline;}
+  .container{max-width:740px;margin:0 auto;padding:0 20px;}
+  header{background:linear-gradient(160deg,#0d1220,#080B14);border-bottom:1px solid var(--line);padding:52px 0 36px;text-align:center;}
+  .brand{font-family:'DM Mono',monospace;font-size:13px;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+  h1{font-family:'Bebas Neue',sans-serif;font-size:46px;line-height:1.05;letter-spacing:1px;color:#fff;margin-bottom:14px;}
+  h1 span{color:var(--accent);}
+  .subtitle{color:var(--muted);font-size:16px;max-width:600px;margin:0 auto;}
+  .backlinks{margin-top:20px;font-size:14px;} .backlinks a{margin:0 10px;}
+  .body{padding:40px 0 10px;}
+  .body h2{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;color:var(--accent2);margin:34px 0 12px;}
+  .body p{margin-bottom:18px;font-size:17px;}
+  .body p.lead{font-size:20px;color:#fff;}
+  .pull{border-left:3px solid var(--accent);background:rgba(124,58,237,.07);padding:18px 22px;border-radius:0 10px 10px 0;margin:26px 0;font-size:18px;color:#fff;}
+  .data{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.3);border-radius:12px;padding:22px 24px;margin:28px 0;}
+  .data h3{font-family:'DM Mono',monospace;font-size:13px;letter-spacing:1px;color:var(--green);text-transform:uppercase;margin-bottom:12px;}
+  .data ul{margin:0 0 0 18px;} .data li{margin-bottom:8px;font-size:16px;}
+  .disclaimer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:36px;padding-top:18px;}
+  footer{border-top:1px solid var(--line);margin-top:20px;padding:30px 0;text-align:center;color:var(--muted);font-size:13px;}
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="brand">Alpha Breakout Lab · Lessons</div>
+    <h1>Time in the Market Beats <span>Timing</span> the Market</h1>
+    <p class="subtitle">Everyone says it. We didn't take it on faith — we tested it ourselves on dozens of stocks. Here's what the data actually showed.</p>
+    <div class="backlinks">
+      <a href="/">→ Home</a>
+      <a href="/simulator.html">→ Simulator</a>
+      <a href="/glossary.html">→ Glossary</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="body">
+
+    <p class="lead">"Just buy the dips." It sounds obvious. Wait for the price to drop, then buy cheaper. Who wouldn't want a better price?</p>
+
+    <p>So we built it and tested it — not once, but four different ways, across dozens of real stocks over 10 to 15 years of price history. We genuinely expected dip-buying to win, at least on some stocks. Here's the honest result: <strong style="color:#fff;">it didn't.</strong></p>
+
+    <h2>What we tested</h2>
+
+    <p>We started with a simple, disciplined dip-buying strategy: keep cash ready, and when a stock became genuinely oversold, deploy it. We measured "oversold" carefully — not just a small wobble, but price falling more than a standard deviation below its own trend, confirmed by RSI. A real dip, on the stock's own terms.</p>
+
+    <p>Then we compared it, fairly, against the most boring strategy imaginable: <strong style="color:#fff;">just buy a fixed amount every month, no matter what.</strong> Dollar-cost averaging. No timing, no waiting, no cleverness.</p>
+
+    <div class="pull">Across VOO, then six blue-chip stocks, then twenty more fresh names — the boring strategy won almost every time.</div>
+
+    <h2>Why waiting loses</h2>
+
+    <p>The problem isn't that dips aren't real. They are — when our strategy caught one, it did get a better price on that purchase. The problem is the <em>cost of waiting</em> for the dip.</p>
+
+    <p>While your cash sits on the sidelines waiting for the price to drop, the market keeps climbing more often than it falls. The gains you miss while waiting are bigger than the discount you get when the dip finally arrives. Markets drift upward over time — and cash on the sidelines doesn't participate in that drift.</p>
+
+    <div class="data">
+      <h3>What the data showed</h3>
+      <ul>
+        <li>Dip-buying (holding cash, waiting for oversold) <strong>lost to steady monthly buying on the large majority of stocks tested.</strong></li>
+        <li>The losses came from idle cash missing the market's upward drift — not from bad entries.</li>
+        <li>This held across index funds, slow dividend stocks, and fast growers alike.</li>
+      </ul>
+    </div>
+
+    <h2>We even tried to be clever</h2>
+
+    <p>Okay — what if you never hold cash out, but simply buy <em>extra</em> on the dips? Keep your normal monthly investment going, and just double up in months when a real dip appears. That keeps you fully invested (the thing that wins) while still leaning into weakness.</p>
+
+    <p>It's the smartest version of the idea. So we tested that too.</p>
+
+    <div class="pull">The result: doubling up on dips made almost no difference at all — the returns were nearly identical to plain, steady buying. Not better. Not worse. The same.</div>
+
+    <p>Here's why, and it's the real lesson: once you're consistently invested, the base of steady buying is doing all the work. The exact timing of a few extra dollars here and there barely moves the needle. Consistency is the engine. Everything else is rounding error.</p>
+
+    <h2>The takeaway</h2>
+
+    <p>If you're building wealth by putting money into the market over time, the single most valuable habit isn't finding the perfect entry. It's this:</p>
+
+    <div class="pull" style="font-size:20px;"><strong style="color:#fff;">Keep buying. Consistently. Through the ups and the downs. Time in the market beats timing the market.</strong></div>
+
+    <p>This is one of the most well-established findings in all of investing — and now you don't have to take our word for it, or anyone else's. We tested it on our own, with real data, and it held up every single time.</p>
+
+    <p>It's also, honestly, freeing. You don't have to predict the perfect moment. You don't have to watch the market every day waiting to pounce. You just have to be consistent. That's a strategy anyone can follow — which is exactly the point.</p>
+
+    <p><em>Note: this lesson is about long-term accumulation — steadily building a position over years. Active, short-term trading is a different game with different rules. But for most people building wealth over time, consistency wins.</em></p>
+
+    <div class="disclaimer">
+      This article is educational and based on historical backtests of past price data. Past performance does not guarantee future results. Backtests do not include trading costs, taxes, or slippage, and real results will differ. Nothing here is financial advice — always do your own research and consider your own situation.
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">Alpha Breakout Lab — free trading education. Nothing here is financial advice.</div>
+</footer>
+</body>
+</html>
