@@ -1,0 +1,128 @@
+{
+  "generated_at": "2026-11-01T18:56:27Z",
+  "generated_date": "2026-11-01",
+  "universe_size": 88,
+  "universe_groups": {
+    "AI / Tech": [
+      "NVDA",
+      "AMD",
+      "PLTR",
+      "SMCI",
+      "ARM",
+      "AVGO",
+      "MRVL",
+      "INTC",
+      "QCOM",
+      "TSM"
+    ],
+    "Space / Defense": [
+      "ASTS",
+      "LUNR",
+      "RKLB",
+      "RDW",
+      "LHX",
+      "RTX",
+      "NOC",
+      "GD",
+      "SPCX"
+    ],
+    "Fintech": [
+      "SOFI",
+      "UPST",
+      "AFRM",
+      "LC",
+      "PYPL",
+      "SQ",
+      "NU",
+      "HOOD"
+    ],
+    "Semiconductors": [
+      "MU",
+      "WOLF",
+      "ON",
+      "SLAB",
+      "MTSI",
+      "SWKS",
+      "QRVO",
+      "MCHP",
+      "QBTS",
+      "RGTI",
+      "QUBT"
+    ],
+    "Biotech": [
+      "RXRX",
+      "BEAM",
+      "EDIT",
+      "NTLA",
+      "SANA",
+      "ARKG"
+    ],
+    "Energy / Nuclear": [
+      "SMR",
+      "OKLO",
+      "UUUU",
+      "CCJ",
+      "NNE",
+      "BWXT",
+      "VST",
+      "CEG"
+    ],
+    "EV / Auto": [
+      "TSLA",
+      "RIVN",
+      "LCID"
+    ],
+    "Consumer": [
+      "AMZN",
+      "META",
+      "GOOGL",
+      "NFLX",
+      "SPOT",
+      "SNAP",
+      "PINS"
+    ],
+    "Finance": [
+      "JPM",
+      "BAC",
+      "GS",
+      "MS",
+      "C",
+      "WFC"
+    ],
+    "Healthcare": [
+      "UNH",
+      "CVS",
+      "HCA",
+      "THC"
+    ],
+    "Industrial": [
+      "CAT",
+      "DE",
+      "HON",
+      "MMM",
+      "GE",
+      "ETN"
+    ],
+    "Momentum": [
+      "CADL",
+      "TSHA",
+      "PAWM",
+      "APP",
+      "COIN",
+      "MSTR",
+      "HUDI",
+      "IIPR",
+      "BULL",
+      "GTEX"
+    ]
+  },
+  "data_source": "Alpaca IEX (end-of-day)",
+  "filters": {
+    "min_price": 3,
+    "max_price": 400,
+    "min_volume": 500000,
+    "strategy": "MA15 x MA65 crossover"
+  },
+  "results": [],
+  "news_hits": []
+}
