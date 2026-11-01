@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TS50K2HGX3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TS50K2HGX3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trading Terms Glossary — From Bid &amp; Ask to Profit Factor | Alpha Breakout Lab</title>
+<meta name="description" content="A plain-English trading glossary that starts with the basics — market orders, margin, stop loss, breakouts — and builds to profit factor, slippage, and curve-fitting. Every term with the real lesson behind it.">
+<link rel="canonical" href="https://alphabreakoutlab.com/glossary.html">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Structured data: glossary / defined terms -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "name": "Trading Terms Glossary",
+  "description": "Plain-English definitions of stock trading terms for strategy traders, each paired with the practical lesson behind it.",
+  "url": "https://alphabreakoutlab.com/glossary.html",
+  "hasDefinedTerm": [
+    {"@type":"DefinedTerm","name":"Market Order","description":"An order to buy or sell immediately at the best price currently available.","url":"https://alphabreakoutlab.com/glossary.html#market-order"},
+    {"@type":"DefinedTerm","name":"Limit Order","description":"An order to buy or sell only at a specific price or better.","url":"https://alphabreakoutlab.com/glossary.html#limit-order"},
+    {"@type":"DefinedTerm","name":"Execution","description":"The moment your order is actually filled — when the buy or sell truly happens.","url":"https://alphabreakoutlab.com/glossary.html#execution"},
+    {"@type":"DefinedTerm","name":"Market Cap","description":"The total value of a company's shares — share price multiplied by the number of shares outstanding.","url":"https://alphabreakoutlab.com/glossary.html#market-cap"},
+    {"@type":"DefinedTerm","name":"P/E Ratio","description":"A stock's price divided by its earnings per share — how much you pay for each dollar of profit.","url":"https://alphabreakoutlab.com/glossary.html#pe-ratio"},
+    {"@type":"DefinedTerm","name":"Dividend","description":"A cash payment some companies make to shareholders, usually every quarter, out of their profits.","url":"https://alphabreakoutlab.com/glossary.html#dividend"},
+    {"@type":"DefinedTerm","name":"Free Float","description":"The number of a company's shares actually available for the public to trade, excluding shares locked up by insiders or the company.","url":"https://alphabreakoutlab.com/glossary.html#free-float"},
+    {"@type":"DefinedTerm","name":"Support & Resistance","description":"Price levels where a stock has repeatedly stopped falling (support) or stopped rising (resistance).","url":"https://alphabreakoutlab.com/glossary.html#support-resistance"},
+    {"@type":"DefinedTerm","name":"Day Trading","description":"Buying and selling a stock within the same day, closing all positions before the market closes.","url":"https://alphabreakoutlab.com/glossary.html#day-trading"},
+    {"@type":"DefinedTerm","name":"Swing Trading","description":"Holding a stock for several days to a few weeks to capture a larger price move.","url":"https://alphabreakoutlab.com/glossary.html#swing-trading"},
+    {"@type":"DefinedTerm","name":"PDT Rule (Pattern Day Trader)","description":"A former U.S. rule (2001–2026) that required a $25,000 minimum balance to day trade actively in a margin account. It was eliminated on June 4, 2026.","url":"https://alphabreakoutlab.com/glossary.html#pdt-rule"},
+    {"@type":"DefinedTerm","name":"Breakout","description":"When a stock's price pushes through a resistance level (or below support) with force, often starting a new move.","url":"https://alphabreakoutlab.com/glossary.html#breakout"},
+    {"@type":"DefinedTerm","name":"Stop Loss","description":"An order that automatically sells your position if the price falls to a set level, capping your loss.","url":"https://alphabreakoutlab.com/glossary.html#stop-loss"},
+    {"@type":"DefinedTerm","name":"Leverage","description":"Using borrowed money to control a larger position than your own cash alone would allow.","url":"https://alphabreakoutlab.com/glossary.html#leverage"},
+    {"@type":"DefinedTerm","name":"Margin","description":"Money borrowed from your broker to buy more stock than your cash covers.","url":"https://alphabreakoutlab.com/glossary.html#margin"},
+    {"@type":"DefinedTerm","name":"Margin Call","description":"A demand from your broker to add cash or sell positions when your account value drops too low to cover your borrowed money.","url":"https://alphabreakoutlab.com/glossary.html#margin-call"},
+    {"@type":"DefinedTerm","name":"Bag Holder","description":"A trader stuck holding a stock that has fallen far below what they paid, hoping it comes back.","url":"https://alphabreakoutlab.com/glossary.html#bag-holder"},
+    {"@type":"DefinedTerm","name":"Risk Management","description":"The practice of controlling how much you can lose on any trade through position sizing, stop losses, and not over-betting.","url":"https://alphabreakoutlab.com/glossary.html#risk-management"},
+    {"@type":"DefinedTerm","name":"Profit Factor","description":"Gross profit divided by gross loss — how many dollars you make for every dollar you lose.","url":"https://alphabreakoutlab.com/glossary.html#profit-factor"},
+    {"@type":"DefinedTerm","name":"Win Rate","description":"The percentage of your trades that end profitably.","url":"https://alphabreakoutlab.com/glossary.html#win-rate"},
+    {"@type":"DefinedTerm","name":"Average Win / Average Loss Ratio","description":"The size of your typical winning trade compared to your typical losing trade.","url":"https://alphabreakoutlab.com/glossary.html#avg-win-loss-ratio"},
+    {"@type":"DefinedTerm","name":"Expectancy","description":"The average amount you can expect to make (or lose) per trade.","url":"https://alphabreakoutlab.com/glossary.html#expectancy"},
+    {"@type":"DefinedTerm","name":"Maximum Drawdown","description":"The largest peak-to-trough drop in your account before it recovered.","url":"https://alphabreakoutlab.com/glossary.html#maximum-drawdown"},
+    {"@type":"DefinedTerm","name":"Moving Average (MA)","description":"The average price of a stock over a set number of recent periods, updated each period.","url":"https://alphabreakoutlab.com/glossary.html#moving-average"},
+    {"@type":"DefinedTerm","name":"MA Crossover","description":"When a faster moving average crosses above or below a slower one, used as a buy or sell signal.","url":"https://alphabreakoutlab.com/glossary.html#ma-crossover"},
+    {"@type":"DefinedTerm","name":"Trailing Stop","description":"A sell order that follows the price up, locking in gains by exiting if price falls a set amount from its peak.","url":"https://alphabreakoutlab.com/glossary.html#trailing-stop"},
+    {"@type":"DefinedTerm","name":"ATR (Average True Range)","description":"A measure of how much a stock typically moves in a given period — its volatility.","url":"https://alphabreakoutlab.com/glossary.html#atr"},
+    {"@type":"DefinedTerm","name":"Position Sizing","description":"How many shares to buy on a given trade, ideally sized so each trade risks the same dollar amount.","url":"https://alphabreakoutlab.com/glossary.html#position-sizing"},
+    {"@type":"DefinedTerm","name":"Slippage","description":"The difference between the price you expected and the price you actually got.","url":"https://alphabreakoutlab.com/glossary.html#slippage"},
+    {"@type":"DefinedTerm","name":"Friction (Trading Costs)","description":"The total real-world cost of trading — spread, slippage, and commissions combined.","url":"https://alphabreakoutlab.com/glossary.html#friction"},
+    {"@type":"DefinedTerm","name":"Bid-Ask Spread","description":"The gap between the highest price buyers will pay and the lowest price sellers will accept.","url":"https://alphabreakoutlab.com/glossary.html#bid-ask-spread"},
+    {"@type":"DefinedTerm","name":"Liquidity / Volume","description":"How easily you can buy or sell a stock without moving its price.","url":"https://alphabreakoutlab.com/glossary.html#liquidity-volume"},
+    {"@type":"DefinedTerm","name":"Backtesting","description":"Testing a strategy on historical price data to see how it would have performed.","url":"https://alphabreakoutlab.com/glossary.html#backtesting"},
+    {"@type":"DefinedTerm","name":"Out-of-Sample Testing","description":"Checking a strategy on data it wasn't developed or tuned on.","url":"https://alphabreakoutlab.com/glossary.html#out-of-sample-testing"},
+    {"@type":"DefinedTerm","name":"Curve-Fitting (Overfitting)","description":"Tuning a strategy so tightly to past data that it captures noise instead of a real pattern.","url":"https://alphabreakoutlab.com/glossary.html#curve-fitting"},
+    {"@type":"DefinedTerm","name":"Whipsaw","description":"When price rapidly reverses direction, triggering a buy then a sell (or vice versa) at a loss.","url":"https://alphabreakoutlab.com/glossary.html#whipsaw"},
+    {"@type":"DefinedTerm","name":"Regime (Market Regime)","description":"The overall character of the market at a given time — trending, choppy, volatile, or calm.","url":"https://alphabreakoutlab.com/glossary.html#regime"}
+  ]
+}
+</script>
+<style>
+  :root{
+    --bg:#080B14; --bg2:#0d1220; --card:#111827;
+    --accent:#7C3AED; --accent2:#06B6D4; --green:#10B981;
+    --fg:#E2E8F0; --muted:#64748B; --line:rgba(148,163,184,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--fg);font-family:'DM Sans',sans-serif;line-height:1.6;}
+  a{color:var(--accent2);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .container{max-width:860px;margin:0 auto;padding:0 20px;}
+
+  header{background:linear-gradient(160deg,#0d1220,#080B14);border-bottom:1px solid var(--line);padding:56px 0 40px;text-align:center;}
+  .brand{font-family:'DM Mono',monospace;font-size:13px;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+  h1{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:1;letter-spacing:1px;color:#fff;margin-bottom:14px;}
+  h1 span{color:var(--accent);}
+  .subtitle{color:var(--muted);font-size:16px;max-width:620px;margin:0 auto;}
+  .backlinks{margin-top:22px;font-size:14px;}
+  .backlinks a{margin:0 10px;}
+
+  .section-divider{display:flex;align-items:center;text-align:center;margin:48px 0 26px;}
+  .section-divider::before,.section-divider::after{content:'';flex:1;height:1px;background:var(--line);}
+  .section-divider h2{padding:0 18px;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:22px;letter-spacing:1px;color:var(--accent2);scroll-margin-top:16px;}
+
+  .term{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:20px 22px;margin-bottom:16px;scroll-margin-top:16px;}
+  .term:hover{border-left-color:var(--accent2);}
+  .term-name{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:24px;letter-spacing:.5px;color:#fff;margin-bottom:8px;}
+  .term-name a.anchor{color:var(--muted);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:400;margin-left:8px;opacity:0;transition:opacity .15s;letter-spacing:0;}
+  .term:hover .term-name a.anchor{opacity:1;}
+  .term-plain{color:var(--fg);margin-bottom:10px;}
+  .term-plain strong{color:var(--accent2);font-weight:500;}
+  .term-context{color:var(--muted);font-size:14.5px;border-top:1px dashed var(--line);padding-top:10px;}
+  .term-context strong{color:var(--green);font-weight:600;}
+
+  .intro-note{background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.25);border-radius:10px;padding:18px 20px;margin:32px 0 8px;font-size:15px;color:var(--fg);}
+
+  .toc{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:24px 0 8px;font-size:14px;}
+  .toc-title{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+  .toc-group{margin-bottom:12px;line-height:1.9;}
+  .toc-group:last-child{margin-bottom:0;}
+  .toc-group .toc-sec{display:block;font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.5px;color:var(--accent2);margin-bottom:2px;}
+  .toc-group .toc-terms a{color:var(--fg);}
+  .toc-group .toc-terms a:hover{color:var(--accent2);}
+
+  footer{border-top:1px solid var(--line);margin-top:56px;padding:32px 0;text-align:center;color:var(--muted);font-size:13px;}
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="brand">Alpha Breakout Lab</div>
+    <h1>Trading Terms <span>Glossary</span></h1>
+    <p class="subtitle">Plain-English definitions for strategy traders — each paired with the real lesson behind it. Grouped by theme so it reads like a teaching tool, not a dictionary.</p>
+    <div class="backlinks">
+      <a href="/simulator.html">→ Strategy Simulator</a>
+      <a href="/pdufa_calendar.html">→ PDUFA Calendar</a>
+      <a href="/">→ Home</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="intro-note">
+    New here? <strong style="color:var(--accent2);">Start at the top</strong> — the first two sections cover the words every trader needs before anything else. Each entry has a <strong style="color:var(--accent2);">plain definition</strong>, and many add a <strong style="color:var(--green);">Trader's Insight</strong> — the earned lesson that tells you why it actually matters.
+  </div>
+
+  <nav class="toc" aria-label="Glossary contents">
+    <div class="toc-title">Jump to a term</div>
+    <div class="toc-group">
+      <a href="#sec-basics" class="toc-sec">Start Here — The Basics</a>
+      <span class="toc-terms"><a href="#market-order">Market Order</a>, <a href="#limit-order">Limit Order</a>, <a href="#execution">Execution</a>, <a href="#market-cap">Market Cap</a>, <a href="#pe-ratio">P/E Ratio</a>, <a href="#dividend">Dividend</a>, <a href="#free-float">Free Float</a>, <a href="#support-resistance">Support &amp; Resistance</a></span>
+    </div>
+    <div class="toc-group">
+      <a href="#sec-styles-risk" class="toc-sec">Trading Styles &amp; Risk</a>
+      <span class="toc-terms"><a href="#day-trading">Day Trading</a>, <a href="#swing-trading">Swing Trading</a>, <a href="#pdt-rule">PDT Rule</a>, <a href="#breakout">Breakout</a>, <a href="#stop-loss">Stop Loss</a>, <a href="#leverage">Leverage</a>, <a href="#margin">Margin</a>, <a href="#margin-call">Margin Call</a>, <a href="#bag-holder">Bag Holder</a>, <a href="#risk-management">Risk Management</a></span>
+    </div>
+    <div class="toc-group">
+      <a href="#sec-performance" class="toc-sec">Performance Metrics</a>
+      <span class="toc-terms"><a href="#profit-factor">Profit Factor</a>, <a href="#win-rate">Win Rate</a>, <a href="#avg-win-loss-ratio">Avg Win / Avg Loss Ratio</a>, <a href="#expectancy">Expectancy</a>, <a href="#maximum-drawdown">Maximum Drawdown</a></span>
+    </div>
+    <div class="toc-group">
+      <a href="#sec-strategy" class="toc-sec">Strategy Concepts</a>
+      <span class="toc-terms"><a href="#moving-average">Moving Average</a>, <a href="#ma-crossover">MA Crossover</a>, <a href="#trailing-stop">Trailing Stop</a>, <a href="#atr">ATR</a>, <a href="#position-sizing">Position Sizing</a></span>
+    </div>
+    <div class="toc-group">
+      <a href="#sec-execution" class="toc-sec">Execution Reality</a>
+      <span class="toc-terms"><a href="#slippage">Slippage</a>, <a href="#friction">Friction</a>, <a href="#bid-ask-spread">Bid-Ask Spread</a>, <a href="#liquidity-volume">Liquidity / Volume</a></span>
+    </div>
+    <div class="toc-group">
+      <a href="#sec-discipline" class="toc-sec">Discipline &amp; Testing</a>
+      <span class="toc-terms"><a href="#backtesting">Backtesting</a>, <a href="#out-of-sample-testing">Out-of-Sample Testing</a>, <a href="#curve-fitting">Curve-Fitting</a>, <a href="#whipsaw">Whipsaw</a>, <a href="#regime">Regime</a></span>
+    </div>
+  </nav>
+
+  <div class="section-divider"><h2 id="sec-basics">Start Here — The Basics</h2></div>
+
+  <div class="term" id="market-order">
+    <h3 class="term-name">Market Order <a class="anchor" href="#market-order" aria-label="Link to Market Order">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> An order to buy or sell immediately at the best price currently available.</div>
+    <div class="term-context"><strong>Why it matters:</strong> It fills fast, but you take whatever price the market gives you — which can be worse than you expected on a fast-moving or thinly-traded stock. Speed over price control.</div>
+  </div>
+
+  <div class="term" id="limit-order">
+    <h3 class="term-name">Limit Order <a class="anchor" href="#limit-order" aria-label="Link to Limit Order">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> An order to buy or sell only at a specific price or better.</div>
+    <div class="term-context"><strong>Why it matters:</strong> You control the price, but the trade only happens if the market reaches your limit — so it might never fill. Price control over speed. The opposite trade-off from a market order.</div>
+  </div>
+
+  <div class="term" id="execution">
+    <h3 class="term-name">Execution <a class="anchor" href="#execution" aria-label="Link to Execution">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> The moment your order is actually filled — when the buy or sell truly happens.</div>
+    <div class="term-context"><strong>Why it matters:</strong> The price you see when you click isn't guaranteed; execution is the price you actually got. The gap between the two is slippage, and it's a real cost on every trade.</div>
+  </div>
+
+  <div class="term" id="market-cap">
+    <h3 class="term-name">Market Cap (Market Capitalization) <a class="anchor" href="#market-cap" aria-label="Link to Market Cap">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> The total value of a company's shares — share price multiplied by the number of shares outstanding.</div>
+    <div class="term-context"><strong>Why it matters:</strong> It tells you the size of the company. Large-caps tend to be steadier; small-caps move faster and wilder. Size shapes how a stock behaves.</div>
+  </div>
+
+  <div class="term" id="pe-ratio">
+    <h3 class="term-name">P/E Ratio (Price-to-Earnings) <a class="anchor" href="#pe-ratio" aria-label="Link to P/E Ratio">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> A stock's price divided by its earnings per share — how much you pay for each dollar of profit.</div>
+    <div class="term-context"><strong>Why it matters:</strong> A rough gauge of how cheap or expensive a stock is relative to its earnings. High P/E means the market expects growth; low P/E can mean a bargain — or a company in trouble. Context matters.</div>
+  </div>
+
+  <div class="term" id="dividend">
+    <h3 class="term-name">Dividend <a class="anchor" href="#dividend" aria-label="Link to Dividend">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> A cash payment some companies make to shareholders, usually every quarter, out of their profits.</div>
+    <div class="term-context"><strong>Why it matters:</strong> It's income you earn just for holding the stock, on top of any price gains. Steady, established companies pay them; fast-growing ones usually reinvest instead.</div>
+  </div>
+
+  <div class="term" id="free-float">
+    <h3 class="term-name">Free Float <a class="anchor" href="#free-float" aria-label="Link to Free Float">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> The number of a company's shares actually available for the public to trade — excluding shares locked up by insiders or the company.</div>
+    <div class="term-context"><strong>Why it matters:</strong> A small float means fewer shares changing hands, so the price can swing violently on normal volume. Low-float stocks are a favorite of momentum traders for exactly that reason — and a trap for the unprepared.</div>
+  </div>
+
+  <div class="term" id="support-resistance">
+    <h3 class="term-name">Support &amp; Resistance <a class="anchor" href="#support-resistance" aria-label="Link to Support and Resistance">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> Price levels where a stock has repeatedly stopped falling (support) or stopped rising (resistance).</div>
+    <div class="term-context"><strong>Why it matters:</strong> These are the floors and ceilings traders watch. Price often bounces off support or stalls at resistance — and when it breaks through, that move can be significant (see: breakout).</div>
+  </div>
+
+  <div class="section-divider"><h2 id="sec-styles-risk">Trading Styles &amp; Risk</h2></div>
+
+  <div class="term" id="day-trading">
+    <h3 class="term-name">Day Trading <a class="anchor" href="#day-trading" aria-label="Link to Day Trading">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> Buying and selling a stock within the same day, closing all positions before the market closes.</div>
+    <div class="term-context"><strong>Why it matters:</strong> No overnight risk, but it demands constant attention and fast decisions — and most day traders lose money. It's the hardest style to do well, not the easiest.</div>
+  </div>
+
+  <div class="term" id="swing-trading">
+    <h3 class="term-name">Swing Trading <a class="anchor" href="#swing-trading" aria-label="Link to Swing Trading">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> Holding a stock for several days to a few weeks to capture a larger price move.</div>
+    <div class="term-context"><strong>Why it matters:</strong> Less frantic than day trading and doesn't require watching every tick, but you carry overnight and weekend risk — news can gap the price against you while you sleep.</div>
+  </div>
+
+  <div class="term" id="pdt-rule">
+    <h3 class="term-name">PDT Rule (Pattern Day Trader) — <span style="color:var(--accent2);font-size:15px;">now retired</span> <a class="anchor" href="#pdt-rule" aria-label="Link to PDT Rule">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> An old U.S. rule (2001–2026) that flagged any margin account making 4+ day trades in 5 business days as a "pattern day trader," then required a $25,000 minimum balance to keep day trading. <strong>It was eliminated on June 4, 2026.</strong></div>
+    <div class="term-context"><strong>Why it still matters:</strong> You'll see the old rule referenced everywhere — most trading content was written while it was in force — so know what it was. Under it, you got 3 day trades per rolling 5 business days; the 4th tripped the flag. That's gone now. In its place, FINRA uses a risk-based intraday margin system: no trade-counting, no $25,000 floor. A standard margin account still needs the pre-existing $2,000 minimum, and if you can't cover your intraday positions, your account can be restricted for up to 90 days. Bottom line: the $25K wall is gone, but margin discipline still applies.</div>
+  </div>
+
+  <div class="term" id="breakout">
+    <h3 class="term-name">Breakout <a class="anchor" href="#breakout" aria-label="Link to Breakout">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> When a stock's price pushes through a resistance level (or below support) with force, often starting a new move.</div>
+    <div class="term-context"><strong>Why it matters:</strong> Breakouts are a core setup — the whole idea behind this site. The catch: not every breakout holds. False breakouts (fakeouts) trap traders who chase, which is why confirmation and risk management matter.</div>
+  </div>
+
+  <div class="term" id="stop-loss">
+    <h3 class="term-name">Stop Loss <a class="anchor" href="#stop-loss" aria-label="Link to Stop Loss">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> An order that automatically sells your position if the price falls to a set level, capping your loss.</div>
+    <div class="term-context"><strong>Why it matters:</strong> It's the single most important discipline tool a trader has. It takes the emotion out of cutting a loser and protects you from a small mistake becoming an account-ending one. Set it before you enter, not after you're down.</div>
+  </div>
+
+  <div class="term" id="leverage">
+    <h3 class="term-name">Leverage <a class="anchor" href="#leverage" aria-label="Link to Leverage">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> Using borrowed money to control a larger position than your own cash alone would allow.</div>
+    <div class="term-context"><strong>Why it matters:</strong> It multiplies gains — and losses — equally. Leverage is why traders blow up accounts: a move that would've been a small loss becomes catastrophic when it's amplified. Powerful and dangerous in the same breath.</div>
+  </div>
+
+  <div class="term" id="margin">
+    <h3 class="term-name">Margin <a class="anchor" href="#margin" aria-label="Link to Margin">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> Money borrowed from your broker to buy more stock than your cash covers.</div>
+    <div class="term-context"><strong>Why it matters:</strong> Margin is how you get leverage. It lets you buy more, but you're now trading with borrowed money that has to be paid back — and the broker charges interest and can force you to sell (see: margin call).</div>
+  </div>
+
+  <div class="term" id="margin-call">
+    <h3 class="term-name">Margin Call <a class="anchor" href="#margin-call" aria-label="Link to Margin Call">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> A demand from your broker to add cash or sell positions when your account value drops too low to cover your borrowed money.</div>
+    <div class="term-context"><strong>Why it matters:</strong> This is the nightmare scenario of trading on margin. If you can't meet it, the broker sells your positions for you — often at the worst possible moment, locking in losses at the bottom. The reason many pros avoid heavy margin entirely.</div>
+  </div>
+
+  <div class="term" id="bag-holder">
+    <h3 class="term-name">Bag Holder <a class="anchor" href="#bag-holder" aria-label="Link to Bag Holder">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> A trader stuck holding a stock that has fallen far below what they paid, hoping it comes back.</div>
+    <div class="term-context"><strong>Why it matters:</strong> Nobody plans to become one — you get there by refusing to take a small loss, then watching it grow. It's the human cost of not using a stop loss. "If you start hoping, you've already messed up."</div>
+  </div>
+
+  <div class="term" id="risk-management">
+    <h3 class="term-name">Risk Management <a class="anchor" href="#risk-management" aria-label="Link to Risk Management">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> The practice of controlling how much you can lose on any trade — through position sizing, stop losses, and not over-betting.</div>
+    <div class="term-context"><strong>Why it matters:</strong> This is what separates traders who last from traders who blow up. You can't control whether a trade wins, but you can always control how much it costs you when it loses. Survival first, profit second.</div>
+  </div>
+
+  <div class="section-divider"><h2 id="sec-performance">Performance Metrics — reading your results</h2></div>
+
+  <div class="term" id="profit-factor">
+    <h3 class="term-name">Profit Factor <a class="anchor" href="#profit-factor" aria-label="Link to Profit Factor">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> Gross profit divided by gross loss — how many dollars you make for every dollar you lose.</div>
+    <div class="term-context"><strong>Why it matters:</strong> Above 1.0 means profitable; above 1.3 is respectable; above 1.5 is strong. It's the metric that matters most because it survives real trading costs — a strategy can show a big total return and still have a weak profit factor once losses are counted properly.</div>
+  </div>
+
+  <div class="term" id="win-rate">
+    <h3 class="term-name">Win Rate <a class="anchor" href="#win-rate" aria-label="Link to Win Rate">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> The percentage of your trades that end profitably.</div>
+    <div class="term-context"><strong>Why it matters:</strong> A high win rate is NOT the same as a profitable strategy. A trend-following system can win only ~40% of the time and still make money — if the winners are much bigger than the losers. Don't judge a strategy on win rate alone; judge it alongside the win/loss ratio.</div>
+  </div>
+
+  <div class="term" id="avg-win-loss-ratio">
+    <h3 class="term-name">Average Win / Average Loss Ratio <a class="anchor" href="#avg-win-loss-ratio" aria-label="Link to Average Win Average Loss Ratio">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> The size of your typical winning trade compared to your typical losing trade.</div>
+    <div class="term-context"><strong>Why it matters:</strong> This ratio is often where the real edge lives. If your winners average 2–3× your losers, you can lose more often than you win and still come out ahead. Cutting losers fast and letting winners run is how you build this ratio.</div>
+  </div>
+
+  <div class="term" id="expectancy">
+    <h3 class="term-name">Expectancy <a class="anchor" href="#expectancy" aria-label="Link to Expectancy">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> The average amount you can expect to make (or lose) per trade.</div>
+    <div class="term-context"><strong>Why it matters:</strong> It combines win rate and win/loss size into one number. Positive expectancy means the strategy makes money over many trades; negative means it bleeds, no matter how good individual trades feel.</div>
+  </div>
+
+  <div class="term" id="maximum-drawdown">
+    <h3 class="term-name">Maximum Drawdown <a class="anchor" href="#maximum-drawdown" aria-label="Link to Maximum Drawdown">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> The largest peak-to-trough drop in your account before it recovered.</div>
+    <div class="term-context"><strong>Why it matters:</strong> This is the number that blows up real accounts — not because the math fails, but because a 50%+ drawdown is emotionally brutal to sit through, and most people panic-sell at the bottom. A strategy you can't stomach isn't a good strategy for you, no matter the return.</div>
+  </div>
+
+  <div class="section-divider"><h2 id="sec-strategy">Strategy Concepts — how the system works</h2></div>
+
+  <div class="term" id="moving-average">
+    <h3 class="term-name">Moving Average (MA) <a class="anchor" href="#moving-average" aria-label="Link to Moving Average">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> The average price of a stock over a set number of recent periods, updated each period.</div>
+    <div class="term-context"><strong>Why it matters:</strong> It smooths out noise to show the underlying trend. A "fast" MA (few periods) reacts quickly; a "slow" MA (many periods) reacts slowly. The interplay between them is the basis of crossover strategies.</div>
+  </div>
+
+  <div class="term" id="ma-crossover">
+    <h3 class="term-name">MA Crossover <a class="anchor" href="#ma-crossover" aria-label="Link to MA Crossover">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> When a faster moving average crosses above or below a slower one, used as a buy or sell signal.</div>
+    <div class="term-context"><strong>Why it matters:</strong> Cross up = potential entry; cross down = potential exit. It works best in trending markets and struggles in choppy, sideways ones — where it gets repeatedly faked out (see: whipsaw).</div>
+  </div>
+
+  <div class="term" id="trailing-stop">
+    <h3 class="term-name">Trailing Stop <a class="anchor" href="#trailing-stop" aria-label="Link to Trailing Stop">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> A sell order that follows the price up, locking in gains by exiting if price falls a set amount from its peak.</div>
+    <div class="term-context"><strong>Why it matters:</strong> It's how you "let winners run but cut losers." A tight trailing stop protects gains but can clip a winner early on normal noise; a loose one gives room but risks giving back more. The right width depends on the stock's volatility.</div>
+  </div>
+
+  <div class="term" id="atr">
+    <h3 class="term-name">ATR (Average True Range) <a class="anchor" href="#atr" aria-label="Link to ATR">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> A measure of how much a stock typically moves in a given period — its volatility.</div>
+    <div class="term-context"><strong>Why it matters:</strong> Useful for setting stops and position sizes that adapt to each stock. A volatile name needs a wider stop (or smaller position) than a calm one; using the same fixed percentage for both gets the volatile one stopped out on noise.</div>
+  </div>
+
+  <div class="term" id="position-sizing">
+    <h3 class="term-name">Position Sizing <a class="anchor" href="#position-sizing" aria-label="Link to Position Sizing">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> How many shares to buy on a given trade.</div>
+    <div class="term-context"><strong>Why it matters:</strong> Sizing each trade so it risks the same dollar amount (not the same share count) is one of the highest-value habits in trading. It keeps any single trade from dominating your results and smooths the ride dramatically.</div>
+  </div>
+
+  <div class="section-divider"><h2 id="sec-execution">Execution Reality — why backtests lie</h2></div>
+
+  <div class="term" id="slippage">
+    <h3 class="term-name">Slippage <a class="anchor" href="#slippage" aria-label="Link to Slippage">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> The difference between the price you expected and the price you actually got.</div>
+    <div class="term-context"><strong>Why it matters:</strong> It exists on every trade, even one share, because price moves in the instant between decision and fill. Backtests that ignore it look far better than reality — slippage is a big part of why a great-looking backtest can lose money live.</div>
+  </div>
+
+  <div class="term" id="friction">
+    <h3 class="term-name">Friction (Trading Costs) <a class="anchor" href="#friction" aria-label="Link to Friction">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> The total real-world cost of trading — spread, slippage, and commissions combined.</div>
+    <div class="term-context"><strong>Why it matters:</strong> Frictionless backtest results are fantasy. The more often a strategy trades, the more friction eats. A strategy that looks profitable on paper must be re-tested with realistic costs before you trust it — sometimes the edge survives, sometimes it vanishes.</div>
+  </div>
+
+  <div class="term" id="bid-ask-spread">
+    <h3 class="term-name">Bid-Ask Spread <a class="anchor" href="#bid-ask-spread" aria-label="Link to Bid-Ask Spread">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> The gap between the highest price buyers will pay and the lowest price sellers will accept.</div>
+    <div class="term-context"><strong>Why it matters:</strong> You cross this gap on every entry and exit, so it's a cost you pay whether you notice it or not. It's wider on thinly-traded stocks, which is why liquidity matters.</div>
+  </div>
+
+  <div class="term" id="liquidity-volume">
+    <h3 class="term-name">Liquidity / Volume <a class="anchor" href="#liquidity-volume" aria-label="Link to Liquidity Volume">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> How easily you can buy or sell a stock without moving its price.</div>
+    <div class="term-context"><strong>Why it matters:</strong> High-volume stocks absorb your order quietly; low-volume ones can move against you when you trade size. A strategy that works on tiny positions can fall apart when you try to deploy real money, because your own orders start affecting the price.</div>
+  </div>
+
+  <div class="section-divider"><h2 id="sec-discipline">Discipline &amp; Testing — telling real edges from luck</h2></div>
+
+  <div class="term" id="backtesting">
+    <h3 class="term-name">Backtesting <a class="anchor" href="#backtesting" aria-label="Link to Backtesting">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> Testing a strategy on historical price data to see how it would have performed.</div>
+    <div class="term-context"><strong>Why it matters:</strong> Essential, but dangerous if trusted blindly. Historical results don't guarantee future results, and it's easy to fool yourself — which is why the terms below matter.</div>
+  </div>
+
+  <div class="term" id="out-of-sample-testing">
+    <h3 class="term-name">Out-of-Sample Testing <a class="anchor" href="#out-of-sample-testing" aria-label="Link to Out-of-Sample Testing">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> Checking a strategy on data it wasn't developed or tuned on.</div>
+    <div class="term-context"><strong>Why it matters:</strong> The single best defense against fooling yourself. If a strategy shines on the data you built it with but falls apart on data it's never seen, the "edge" was just a fit to the past. A real edge survives on unseen data.</div>
+  </div>
+
+  <div class="term" id="curve-fitting">
+    <h3 class="term-name">Curve-Fitting (Overfitting) <a class="anchor" href="#curve-fitting" aria-label="Link to Curve-Fitting">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> Tuning a strategy so tightly to past data that it captures noise instead of a real pattern.</div>
+    <div class="term-context"><strong>Why it matters:</strong> The classic trap. Add enough rules and settings and any backtest looks perfect — on that specific history. It then fails live, because the noise it was fit to never repeats. Simpler strategies with fewer knobs are harder to overfit.</div>
+  </div>
+
+  <div class="term" id="whipsaw">
+    <h3 class="term-name">Whipsaw <a class="anchor" href="#whipsaw" aria-label="Link to Whipsaw">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> When price rapidly reverses direction, triggering a buy then a sell (or vice versa) at a loss.</div>
+    <div class="term-context"><strong>Why it matters:</strong> The main enemy of crossover strategies. In choppy, sideways markets, the price crosses back and forth over the moving averages, generating repeated small losing trades. It's why these strategies do best in clean trends and worst in ranges.</div>
+  </div>
+
+  <div class="term" id="regime">
+    <h3 class="term-name">Regime (Market Regime) <a class="anchor" href="#regime" aria-label="Link to Regime">#</a></h3>
+    <div class="term-plain"><strong>Plain:</strong> The overall character of the market at a given time — trending, choppy, volatile, calm.</div>
+    <div class="term-context"><strong>Why it matters:</strong> A strategy that works in one regime often fails in another. Knowing which regime you're in tells you whether your strategy should be expected to work right now — and whether a rough patch is a broken strategy or just the wrong environment.</div>
+  </div>
+
+  <div class="intro-note" style="margin-top:36px;text-align:center;">
+    Want to see these concepts in action? Try the <a href="/simulator.html">strategy simulator</a> — run a moving-average crossover and watch profit factor, drawdown, and whipsaw play out on real price data.
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    Alpha Breakout Lab — free trading education. Nothing here is financial advice; always do your own research.
+  </div>
+</footer>
+</body>
+</html>
