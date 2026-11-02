@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-01T18:56:27Z",
-  "generated_date": "2026-11-01",
+  "generated_at": "2026-11-02T03:33:09Z",
+  "generated_date": "2026-11-02",
   "universe_size": 88,
   "universe_groups": {
     "AI / Tech": [
@@ -79,7 +79,8 @@
       "NFLX",
       "SPOT",
       "SNAP",
-      "PINS"
+      "PINS",
+      "SBUX"
     ],
     "Finance": [
       "JPM",
@@ -106,14 +107,13 @@
     "Momentum": [
       "CADL",
       "TSHA",
-      "PAWM",
+      "SHOP",
       "APP",
       "COIN",
       "MSTR",
       "HUDI",
       "IIPR",
-      "BULL",
-      "GTEX"
+      "BULL"
     ]
   },
   "data_source": "Alpaca IEX (end-of-day)",
@@ -123,6 +123,152 @@
     "min_volume": 500000,
     "strategy": "MA15 x MA65 crossover"
   },
-  "results": [],
+  "results": [
+    {
+      "ticker": "SNAP",
+      "price": 5.34,
+      "ma15": 6.18,
+      "ma65": 5.64,
+      "gap_pct": 9.6,
+      "avg_vol": 2772129,
+      "rsi": 36.3,
+      "rsi_label": "weak",
+      "vsurge": 1.46,
+      "freshness": "UPTREND",
+      "added_date": "2026-11-01",
+      "days_on_watchlist": 1,
+      "keyword_hit": false,
+      "news_sentiment": null,
+      "news": [
+        "Snap Remains Sole Defendant in Social Media Harm Trial Following Meta Settl",
+        "\"Meta Settles With Social Media Addiction Plaintiff Ahead Of Trial; After T",
+        "Meta and Snap Face Landmark Trial Over Teen Mental Health Allegations"
+      ]
+    },
+    {
+      "ticker": "PLTR",
+      "price": 184.1,
+      "ma15": 197.43,
+      "ma65": 181.7,
+      "gap_pct": 8.66,
+      "avg_vol": 573716,
+      "rsi": 41.9,
+      "rsi_label": "neutral",
+      "vsurge": 1.58,
+      "freshness": "UPTREND",
+      "added_date": "2026-11-01",
+      "days_on_watchlist": 1,
+      "keyword_hit": false,
+      "news_sentiment": null,
+      "news": [
+        "Apple, Palantir On Deck Monday As AI Demand, iPhone Growth Face Test",
+        "Palantir Stock Slowly Forms a Bullish Pattern as Q3 Earnings Loom",
+        "S&P 500, Dow Jones, and Nasdaq 100 Outlook: Top Drivers for US Stocks This "
+      ]
+    },
+    {
+      "ticker": "RXRX",
+      "price": 4.03,
+      "ma15": 3.86,
+      "ma65": 3.63,
+      "gap_pct": 6.35,
+      "avg_vol": 1903424,
+      "rsi": 52.5,
+      "rsi_label": "neutral",
+      "vsurge": 0.78,
+      "freshness": "UPTREND",
+      "added_date": "2026-11-01",
+      "days_on_watchlist": 1,
+      "keyword_hit": false,
+      "news_sentiment": null,
+      "news": [
+        "Recursion Pharmaceuticals Provides Pipeline Updates and Prepares for Q3 202"
+      ]
+    },
+    {
+      "ticker": "TSLA",
+      "price": 399.8,
+      "ma15": 381.3,
+      "ma65": 360.87,
+      "gap_pct": 5.66,
+      "avg_vol": 740280,
+      "rsi": 60.8,
+      "rsi_label": "strong",
+      "vsurge": 1.7,
+      "freshness": "UPTREND",
+      "added_date": "2026-11-01",
+      "days_on_watchlist": 1,
+      "keyword_hit": false,
+      "news_sentiment": null,
+      "news": [
+        "Elon Musk\u2019s Net Worth Takes a Hit as SpaceX Stock Dips on AI Bubble Jitters",
+        "S&P 500, Dow Jones, and Nasdaq 100 Outlook: Top Drivers for US Stocks This ",
+        "This Week in TSLA: Elon Musk's Apple Mac Studio Jibe, Former Autopilot Lead"
+      ]
+    },
+    {
+      "ticker": "SPCX",
+      "price": 134.68,
+      "ma15": 148.91,
+      "ma65": 145.32,
+      "gap_pct": 2.47,
+      "avg_vol": 3212405,
+      "rsi": 37.0,
+      "rsi_label": "weak",
+      "vsurge": 1.37,
+      "freshness": "UPTREND",
+      "added_date": "2026-11-01",
+      "days_on_watchlist": 1,
+      "keyword_hit": false,
+      "news_sentiment": "negative",
+      "news": [
+        "Elon Musk\u2019s Net Worth Takes a Hit as SpaceX Stock Dips on AI Bubble Jitters",
+        "$600B Tech Wipeout Meets $1.48T Margin Debt",
+        "Federal Judge Denies SpaceXAI Motion to Dismiss NAACP Lawsuit"
+      ]
+    },
+    {
+      "ticker": "PINS",
+      "price": 19.36,
+      "ma15": 21.71,
+      "ma65": 21.34,
+      "gap_pct": 1.71,
+      "avg_vol": 994329,
+      "rsi": 38.5,
+      "rsi_label": "weak",
+      "vsurge": 2.66,
+      "freshness": "UPTREND",
+      "added_date": "2026-11-01",
+      "days_on_watchlist": 1,
+      "keyword_hit": false,
+      "news_sentiment": null,
+      "news": [
+        "Benzinga Bulls and Bears: Carvana, Rivian, Amazon",
+        "Rosenblatt Maintains Neutral on Pinterest, Lowers Price Target to $21",
+        "JP Morgan Maintains Neutral on Pinterest, Lowers Price Target to $22"
+      ]
+    },
+    {
+      "ticker": "MRVL",
+      "price": 196.4,
+      "ma15": 237.8,
+      "ma65": 236.78,
+      "gap_pct": 0.43,
+      "avg_vol": 633252,
+      "rsi": 34.0,
+      "rsi_label": "weak",
+      "vsurge": 2.16,
+      "freshness": "UPTREND",
+      "added_date": "2026-11-01",
+      "days_on_watchlist": 1,
+      "keyword_hit": false,
+      "news_sentiment": null,
+      "news": [
+        "Earnings Volatility Watch: 10 Stocks Are Set to Swing More Than 10% This We",
+        "Benzinga Bulls and Bears: Carvana, Rivian, Amazon",
+        "10 Information Technology Stocks With Whale Alerts In Today\u2019s Session"
+      ]
+    }
+  ],
   "news_hits": []
 }
