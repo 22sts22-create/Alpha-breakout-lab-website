@@ -134,11 +134,11 @@ WATCHLIST_GROUPS = {
     "Biotech":          ["RXRX","BEAM","EDIT","NTLA","SANA","ARKG"],
     "Energy / Nuclear": ["SMR","OKLO","UUUU","CCJ","NNE","BWXT","VST","CEG"],
     "EV / Auto":        ["TSLA","RIVN","LCID"],
-    "Consumer":         ["AMZN","META","GOOGL","NFLX","SPOT","SNAP","PINS"],
+    "Consumer":         ["AMZN","META","GOOGL","NFLX","SPOT","SNAP","PINS","SBUX"],
     "Finance":          ["JPM","BAC","GS","MS","C","WFC"],
     "Healthcare":       ["UNH","CVS","HCA","THC"],
     "Industrial":       ["CAT","DE","HON","MMM","GE","ETN"],
-    "Momentum":         ["CADL","TSHA","PAWM","APP","COIN","MSTR","HUDI","IIPR","BULL"],
+    "Momentum":         ["CADL","TSHA","SHOP","APP","COIN","MSTR","HUDI","IIPR","BULL"],
 }
 # Flatten to a de-duplicated scan list (preserves order, drops any repeats).
 WATCHLIST = list(dict.fromkeys(t for group in WATCHLIST_GROUPS.values() for t in group))
