@@ -1,0 +1,58 @@
+name: PDUFA Pro — Enrich + Alerts
+
+# Runs daily. Refreshes the Pro financials from SEC EDGAR, then builds the
+# catalyst alert. In "digest" mode the email only builds on Mondays (the script
+# checks the weekday itself), so a daily cron is fine — most days it no-ops.
+# Nothing is ever auto-sent: the alert lands as a DRAFT in MailerLite for review.
+
+on:
+  schedule:
+    - cron: "0 13 * * *"        # 13:00 UTC daily (06:00 America/Phoenix)
+  workflow_dispatch:
+    inputs:
+      force_run:
+        description: "Force the weekly digest to build now (ignore the Monday check)"
+        required: false
+        default: "0"
+
+permissions:
+  contents: write
+
+jobs:
+  pro:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Refresh Pro data from SEC EDGAR
+        run: python3 pdufa_pro_enrich.py
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+
+      - name: Build Pro catalyst alert (draft only)
+        run: python3 pdufa_pro_alerts.py
+        env:
+          ALERT_MODE: digest                 # change to "windows" for per-event 7d/1d alerts
+          DIGEST_DAYS: "7"
+          MAILERLITE_API_KEY:      ${{ secrets.MAILERLITE_API_KEY }}
+          MAILERLITE_PRO_GROUP_ID: ${{ secrets.MAILERLITE_PRO_GROUP_ID }}
+          MAILERLITE_FROM:         ${{ secrets.MAILERLITE_FROM }}
+          MAILERLITE_FROM_NAME:    ${{ secrets.MAILERLITE_FROM_NAME }}
+          PUSHOVER_USER_KEY:       ${{ secrets.PUSHOVER_USER_KEY }}
+          PUSHOVER_API_TOKEN:      ${{ secrets.PUSHOVER_API_TOKEN }}
+          FORCE_RUN:               ${{ github.event.inputs.force_run }}
+
+      - name: Commit refreshed data + alert state
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add pdufa_pro_data.json sent_alerts.json ticker_cik_map.json 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "PDUFA Pro: refresh data + alert state [skip ci]"
+          git push || true
