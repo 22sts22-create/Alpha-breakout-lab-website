@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-04T06:12:32Z",
+  "generated_at": "2026-11-04T20:10:00Z",
   "generated_date": "2026-11-04",
   "source": "SEC EDGAR (companyfacts + submissions)",
-  "count": 32,
+  "count": 35,
   "events": [
     {
       "ticker": "CING",
@@ -707,6 +707,21 @@
       "recent_filings": [],
       "insider_filings_90d": [],
       "insider_activity": "not available"
+    },
+    {
+      "ticker": "URGN",
+      "cik": null,
+      "error": "no CIK found"
+    },
+    {
+      "ticker": "RPRX",
+      "cik": null,
+      "error": "no CIK found"
+    },
+    {
+      "ticker": "MLTX",
+      "cik": null,
+      "error": "no CIK found"
     }
   ]
 }
