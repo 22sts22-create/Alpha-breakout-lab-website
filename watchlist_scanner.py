@@ -130,7 +130,7 @@ WATCHLIST_GROUPS = {
     "AI / Tech":        ["NVDA","AMD","PLTR","SMCI","ARM","AVGO","MRVL","INTC","QCOM","TSM"],
     "Space / Defense":  ["ASTS","LUNR","RKLB","RDW","LHX","RTX","NOC","GD","SPCX"],
     "Fintech":          ["SOFI","UPST","AFRM","LC","PYPL","SQ","NU","HOOD"],
-    "Semiconductors":   ["MU","WOLF","ON","SLAB","MTSI","SWKS","QRVO","MCHP","QBTS","RGTI","QUBT","AEHR"],
+    "Semiconductors":   ["MU","WOLF","ON","SLAB","MTSI","SWKS","QRVO","MCHP","QBTS","RGTI","QUBT","AEHR","MCHP"],
     "Biotech":          ["RXRX","BEAM","EDIT","NTLA","SANA","ARKG"],
     "Energy / Nuclear": ["SMR","OKLO","UUUU","CCJ","NNE","BWXT","VST","CEG"],
     "EV / Auto":        ["TSLA","RIVN","LCID"],
