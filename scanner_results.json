@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-07T03:00:03Z",
-  "generated_date": "2026-11-07",
+  "generated_at": "2026-11-10T04:43:13Z",
+  "generated_date": "2026-11-10",
   "universe_size": 89,
   "universe_groups": {
     "AI / Tech": [
@@ -48,7 +48,8 @@
       "QBTS",
       "RGTI",
       "QUBT",
-      "AEHR"
+      "AEHR",
+      "MCHP"
     ],
     "Biotech": [
       "RXRX",
@@ -126,150 +127,24 @@
   },
   "results": [
     {
-      "ticker": "SHOP",
-      "price": 148.89,
-      "ma15": 161.85,
-      "ma65": 152.23,
-      "gap_pct": 6.32,
-      "avg_vol": 530068,
-      "rsi": 42.7,
-      "rsi_label": "neutral",
-      "vsurge": 1.26,
-      "freshness": "UPTREND",
-      "added_date": "2026-11-02",
-      "days_on_watchlist": 5,
-      "keyword_hit": false,
-      "news_sentiment": null,
-      "news": [
-        "Jason Calacanis Is Buying These 8 Stocks After the Midterm Selloff: 'Market",
-        "Zipify OneClickUpsell Integrates with Shopify Sidekick",
-        "Argus Research Maintains Buy Rating on Shopify"
-      ]
-    },
-    {
-      "ticker": "TSLA",
-      "price": 358.21,
-      "ma15": 384.72,
-      "ma65": 365.29,
-      "gap_pct": 5.32,
-      "avg_vol": 921442,
-      "rsi": 42.4,
-      "rsi_label": "neutral",
-      "vsurge": 0.95,
-      "freshness": "UPTREND",
-      "added_date": "2026-11-01",
-      "days_on_watchlist": 6,
-      "keyword_hit": false,
-      "news_sentiment": null,
-      "news": [
-        "Jason Calacanis Is Buying These 8 Stocks After the Midterm Selloff: 'Market",
-        "Elon Musk Pardon Request Hits Change.org with Tesla Influencer Sharing: Wha",
-        "Reported Earlier: 'SpaceX, Tesla Merger Less Likely After Midterms. Texas G"
-      ]
-    },
-    {
-      "ticker": "SNAP",
-      "price": 4.95,
-      "ma15": 5.87,
-      "ma65": 5.66,
-      "gap_pct": 3.79,
-      "avg_vol": 3121800,
-      "rsi": 35.3,
-      "rsi_label": "weak",
-      "vsurge": 0.81,
-      "freshness": "UPTREND",
-      "added_date": "2026-11-01",
-      "days_on_watchlist": 6,
-      "keyword_hit": false,
-      "news_sentiment": "negative",
-      "news": [
-        "Citigroup Maintains Neutral on Snap, Lowers Price Target to $6",
-        "Snapchat to Disable 'Find Friends' Feature for Child Users in UK",
-        "West Virginia Attorney General Files Consumer Protection Lawsuit Against Sn"
-      ]
-    },
-    {
-      "ticker": "RXRX",
-      "price": 3.52,
-      "ma15": 3.8,
-      "ma65": 3.66,
-      "gap_pct": 3.75,
-      "avg_vol": 1495145,
-      "rsi": 44.1,
-      "rsi_label": "neutral",
-      "vsurge": 0.43,
-      "freshness": "UPTREND",
-      "added_date": "2026-11-01",
-      "days_on_watchlist": 6,
-      "keyword_hit": false,
-      "news_sentiment": null,
-      "news": [
-        "Altitude Lab to Join Portal at Woodbine Labs Innovation Hub",
-        "Recursion Announces Positive Phase 2 Data for REC-4881 in TUPELO Trial",
-        "Recursion Reports Third Quarter 2026 Financial Results and Business Updates"
-      ]
-    },
-    {
       "ticker": "PYPL",
-      "price": 59.24,
-      "ma15": 57.49,
-      "ma65": 56.41,
-      "gap_pct": 1.91,
-      "avg_vol": 511330,
-      "rsi": 61.6,
+      "price": 60.03,
+      "ma15": 57.72,
+      "ma65": 56.42,
+      "gap_pct": 2.3,
+      "avg_vol": 535282,
+      "rsi": 64.4,
       "rsi_label": "strong",
-      "vsurge": 0.59,
+      "vsurge": 1.58,
       "freshness": "UPTREND",
       "added_date": "2026-11-01",
-      "days_on_watchlist": 6,
+      "days_on_watchlist": 9,
       "keyword_hit": false,
       "news_sentiment": "negative",
       "news": [
-        "PayPal Announces 251 Job Cuts at San Jose Headquarters",
-        "KCB Bank Tanzania Integrates PayPal Services into Mobile App",
-        "PayPal Releases Cross-Border Payment Data for Singapore Merchants"
-      ]
-    },
-    {
-      "ticker": "PLTR",
-      "price": 160.35,
-      "ma15": 186.47,
-      "ma65": 183.47,
-      "gap_pct": 1.64,
-      "avg_vol": 676673,
-      "rsi": 31.2,
-      "rsi_label": "weak",
-      "vsurge": 1.17,
-      "freshness": "UPTREND",
-      "added_date": "2026-11-01",
-      "days_on_watchlist": 6,
-      "keyword_hit": false,
-      "news_sentiment": "positive",
-      "news": [
-        "StoneX Maintains Hold Rating on Palantir Technologies Inc.",
-        "Palantir Set to Receive NHS Contract Extension",
-        "Reported Earlier: AmeriLife And Palantir Announce Enterprise Partnership To"
-      ]
-    },
-    {
-      "ticker": "PINS",
-      "price": 18.95,
-      "ma15": 21.07,
-      "ma65": 21.04,
-      "gap_pct": 0.18,
-      "avg_vol": 1042441,
-      "rsi": 39.4,
-      "rsi_label": "weak",
-      "vsurge": 0.6,
-      "freshness": "UPTREND",
-      "added_date": "2026-11-01",
-      "days_on_watchlist": 6,
-      "keyword_hit": false,
-      "news_sentiment": null,
-      "news": [
-        "Citigroup Maintains Pinterest at Neutral, Lowers Price Target to $22",
-        "Citigroup Maintains Neutral on Pinterest, Lowers Price Target to $22",
-        "KeyBanc Maintains Pinterest at Overweight, Lowers Price Target to $25"
+        "4 Financials Stocks Whale Activity In Today\u2019s Session",
+        "interCaribbean Airways Adds PayPal as Payment Option",
+        "PayPal Announces 251 Job Cuts at San Jose Headquarters"
       ]
     }
   ],
