@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-10T04:43:13Z",
-  "generated_date": "2026-11-10",
+  "generated_at": "2026-11-11T02:54:56Z",
+  "generated_date": "2026-11-11",
   "universe_size": 89,
   "universe_groups": {
     "AI / Tech": [
@@ -128,23 +128,23 @@
   "results": [
     {
       "ticker": "PYPL",
-      "price": 60.03,
-      "ma15": 57.72,
+      "price": 58.8,
+      "ma15": 57.83,
       "ma65": 56.42,
-      "gap_pct": 2.3,
-      "avg_vol": 535282,
-      "rsi": 64.4,
-      "rsi_label": "strong",
-      "vsurge": 1.58,
+      "gap_pct": 2.51,
+      "avg_vol": 536081,
+      "rsi": 57.4,
+      "rsi_label": "neutral",
+      "vsurge": 0.58,
       "freshness": "UPTREND",
       "added_date": "2026-11-01",
-      "days_on_watchlist": 9,
+      "days_on_watchlist": 10,
       "keyword_hit": false,
-      "news_sentiment": "negative",
+      "news_sentiment": "positive",
       "news": [
+        "Venmo Launches Receipt Scanning Feature to Split Bills by Item",
         "4 Financials Stocks Whale Activity In Today\u2019s Session",
-        "interCaribbean Airways Adds PayPal as Payment Option",
-        "PayPal Announces 251 Job Cuts at San Jose Headquarters"
+        "interCaribbean Airways Adds PayPal as Payment Option"
       ]
     }
   ],
