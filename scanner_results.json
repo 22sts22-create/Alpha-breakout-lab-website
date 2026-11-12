@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-11T02:54:56Z",
-  "generated_date": "2026-11-11",
+  "generated_at": "2026-11-12T03:59:58Z",
+  "generated_date": "2026-11-12",
   "universe_size": 89,
   "universe_groups": {
     "AI / Tech": [
@@ -127,24 +127,87 @@
   },
   "results": [
     {
-      "ticker": "PYPL",
-      "price": 58.8,
-      "ma15": 57.83,
-      "ma65": 56.42,
-      "gap_pct": 2.51,
-      "avg_vol": 536081,
-      "rsi": 57.4,
+      "ticker": "WFC",
+      "price": 85.81,
+      "ma15": 84.49,
+      "ma65": 84.79,
+      "gap_pct": -0.35,
+      "avg_vol": 940852,
+      "rsi": 55.9,
       "rsi_label": "neutral",
-      "vsurge": 0.58,
-      "freshness": "UPTREND",
+      "vsurge": 0.41,
+      "freshness": "NEAR CROSS",
       "added_date": "2026-11-01",
-      "days_on_watchlist": 10,
+      "days_on_watchlist": 11,
       "keyword_hit": false,
       "news_sentiment": "positive",
       "news": [
-        "Venmo Launches Receipt Scanning Feature to Split Bills by Item",
-        "4 Financials Stocks Whale Activity In Today\u2019s Session",
-        "interCaribbean Airways Adds PayPal as Payment Option"
+        "Wells Fargo Supports Silver Lining's '25 Stories of Small Business Resilien",
+        "Americans' Credit Card Debt Climbs to Record $1.29 Trillion While US Househ",
+        "Wells Fargo Securities Downgrades The Hartford Financial Services Group"
+      ]
+    },
+    {
+      "ticker": "AMZN",
+      "price": 266.23,
+      "ma15": 255.08,
+      "ma65": 256.04,
+      "gap_pct": -0.37,
+      "avg_vol": 1974335,
+      "rsi": 57.3,
+      "rsi_label": "neutral",
+      "vsurge": 0.89,
+      "freshness": "NEAR CROSS",
+      "added_date": "2026-11-01",
+      "days_on_watchlist": 11,
+      "keyword_hit": false,
+      "news_sentiment": "mixed",
+      "news": [
+        "Court Grants Class Certification in Amazon Photos Biometric Privacy Lawsuit",
+        "Is CoreWeave's Rally Durable? Nvidia Stock Can Fall 25% If Huang Leaves",
+        "Cyclicals Lead Sectors In Wednesday Trading As Defensives Trail"
+      ]
+    },
+    {
+      "ticker": "TSLA",
+      "price": 390.75,
+      "ma15": 386.07,
+      "ma65": 367.7,
+      "gap_pct": 5.0,
+      "avg_vol": 966668,
+      "rsi": 54.3,
+      "rsi_label": "neutral",
+      "vsurge": 0.71,
+      "freshness": "UPTREND",
+      "added_date": "2026-11-01",
+      "days_on_watchlist": 11,
+      "keyword_hit": false,
+      "news_sentiment": null,
+      "news": [
+        "Tesla Extends Cybertruck Production Timeline",
+        "SEC Completes Distribution of Fair Fund from 2018 Tesla Settlement",
+        "EXCLUSIVE: Jensen Huang Drama Puts Q3 Financials on Backburner, Expert Says"
+      ]
+    },
+    {
+      "ticker": "PYPL",
+      "price": 59.48,
+      "ma15": 57.98,
+      "ma65": 56.42,
+      "gap_pct": 2.76,
+      "avg_vol": 521174,
+      "rsi": 60.0,
+      "rsi_label": "strong",
+      "vsurge": 0.61,
+      "freshness": "UPTREND",
+      "added_date": "2026-11-01",
+      "days_on_watchlist": 11,
+      "keyword_hit": false,
+      "news_sentiment": "positive",
+      "news": [
+        "Michael Burry\u2019s Portfolio: What the \u2018Big Short\u2019 Investor Owns Now",
+        "Bernstein Maintains Market Perform on PayPal Holdings, Raises Price Target ",
+        "Bernstein Adjusts Price Target on PayPal to $60"
       ]
     }
   ],
