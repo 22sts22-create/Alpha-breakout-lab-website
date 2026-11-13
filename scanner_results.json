@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-12T03:59:58Z",
-  "generated_date": "2026-11-12",
+  "generated_at": "2026-11-13T03:30:42Z",
+  "generated_date": "2026-11-13",
   "universe_size": 89,
   "universe_groups": {
     "AI / Tech": [
@@ -127,18 +127,39 @@
   },
   "results": [
     {
-      "ticker": "WFC",
-      "price": 85.81,
-      "ma15": 84.49,
-      "ma65": 84.79,
-      "gap_pct": -0.35,
-      "avg_vol": 940852,
-      "rsi": 55.9,
+      "ticker": "AMZN",
+      "price": 267.44,
+      "ma15": 256.22,
+      "ma65": 256.04,
+      "gap_pct": 0.07,
+      "avg_vol": 1983362,
+      "rsi": 58.1,
       "rsi_label": "neutral",
-      "vsurge": 0.41,
+      "vsurge": 0.89,
+      "freshness": "TODAY",
+      "added_date": "2026-11-01",
+      "days_on_watchlist": 12,
+      "keyword_hit": false,
+      "news_sentiment": null,
+      "news": [
+        "Cathie Wood Buys the Dip in CoreWeave, Sells Palantir Stock: Ark Also Trade",
+        "AOC Says Five Guys in Tuxedos Shouldn\u2019t Control the Economy: \u2018We Need to Ch",
+        "Nvidia at 11X Earnings? One Wall Street Bull Says Investors Are Getting a R"
+      ]
+    },
+    {
+      "ticker": "WFC",
+      "price": 85.78,
+      "ma15": 84.68,
+      "ma65": 84.74,
+      "gap_pct": -0.08,
+      "avg_vol": 867079,
+      "rsi": 55.8,
+      "rsi_label": "neutral",
+      "vsurge": 0.57,
       "freshness": "NEAR CROSS",
       "added_date": "2026-11-01",
-      "days_on_watchlist": 11,
+      "days_on_watchlist": 12,
       "keyword_hit": false,
       "news_sentiment": "positive",
       "news": [
@@ -148,66 +169,45 @@
       ]
     },
     {
-      "ticker": "AMZN",
-      "price": 266.23,
-      "ma15": 255.08,
-      "ma65": 256.04,
-      "gap_pct": -0.37,
-      "avg_vol": 1974335,
-      "rsi": 57.3,
-      "rsi_label": "neutral",
-      "vsurge": 0.89,
-      "freshness": "NEAR CROSS",
-      "added_date": "2026-11-01",
-      "days_on_watchlist": 11,
-      "keyword_hit": false,
-      "news_sentiment": "mixed",
-      "news": [
-        "Court Grants Class Certification in Amazon Photos Biometric Privacy Lawsuit",
-        "Is CoreWeave's Rally Durable? Nvidia Stock Can Fall 25% If Huang Leaves",
-        "Cyclicals Lead Sectors In Wednesday Trading As Defensives Trail"
-      ]
-    },
-    {
       "ticker": "TSLA",
-      "price": 390.75,
-      "ma15": 386.07,
-      "ma65": 367.7,
-      "gap_pct": 5.0,
-      "avg_vol": 966668,
-      "rsi": 54.3,
+      "price": 397.43,
+      "ma15": 387.58,
+      "ma65": 368.77,
+      "gap_pct": 5.1,
+      "avg_vol": 969162,
+      "rsi": 56.5,
       "rsi_label": "neutral",
-      "vsurge": 0.71,
+      "vsurge": 0.81,
       "freshness": "UPTREND",
       "added_date": "2026-11-01",
-      "days_on_watchlist": 11,
+      "days_on_watchlist": 12,
       "keyword_hit": false,
-      "news_sentiment": null,
+      "news_sentiment": "positive",
       "news": [
-        "Tesla Extends Cybertruck Production Timeline",
-        "SEC Completes Distribution of Fair Fund from 2018 Tesla Settlement",
-        "EXCLUSIVE: Jensen Huang Drama Puts Q3 Financials on Backburner, Expert Says"
+        "Tesla Launches Over 20 New Merchandise Products for Holidays and Some are A",
+        "From AI Chips to Rocket Ships: Will Jensen Huang Join Elon Musk?",
+        "AOC Says Five Guys in Tuxedos Shouldn\u2019t Control the Economy: \u2018We Need to Ch"
       ]
     },
     {
       "ticker": "PYPL",
-      "price": 59.48,
-      "ma15": 57.98,
-      "ma65": 56.42,
-      "gap_pct": 2.76,
-      "avg_vol": 521174,
-      "rsi": 60.0,
-      "rsi_label": "strong",
+      "price": 58.3,
+      "ma15": 58.03,
+      "ma65": 56.41,
+      "gap_pct": 2.88,
+      "avg_vol": 506785,
+      "rsi": 53.9,
+      "rsi_label": "neutral",
       "vsurge": 0.61,
       "freshness": "UPTREND",
       "added_date": "2026-11-01",
-      "days_on_watchlist": 11,
+      "days_on_watchlist": 12,
       "keyword_hit": false,
-      "news_sentiment": "positive",
+      "news_sentiment": null,
       "news": [
-        "Michael Burry\u2019s Portfolio: What the \u2018Big Short\u2019 Investor Owns Now",
-        "Bernstein Maintains Market Perform on PayPal Holdings, Raises Price Target ",
-        "Bernstein Adjusts Price Target on PayPal to $60"
+        "PayPal Partners With Workday to Integrate Direct Deposit Services",
+        "Daiwa Securities Adjusts Price Target on PayPal to $60 From $59",
+        "Michael Burry\u2019s Portfolio: What the \u2018Big Short\u2019 Investor Owns Now"
       ]
     }
   ],
