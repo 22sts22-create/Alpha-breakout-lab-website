@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-13T03:30:42Z",
-  "generated_date": "2026-11-13",
+  "generated_at": "2026-11-14T03:27:23Z",
+  "generated_date": "2026-11-14",
   "universe_size": 89,
   "universe_groups": {
     "AI / Tech": [
@@ -127,87 +127,66 @@
   },
   "results": [
     {
-      "ticker": "AMZN",
-      "price": 267.44,
-      "ma15": 256.22,
-      "ma65": 256.04,
-      "gap_pct": 0.07,
-      "avg_vol": 1983362,
-      "rsi": 58.1,
+      "ticker": "WFC",
+      "price": 86.05,
+      "ma15": 84.92,
+      "ma65": 84.71,
+      "gap_pct": 0.25,
+      "avg_vol": 768995,
+      "rsi": 56.8,
       "rsi_label": "neutral",
-      "vsurge": 0.89,
+      "vsurge": 0.65,
       "freshness": "TODAY",
       "added_date": "2026-11-01",
-      "days_on_watchlist": 12,
+      "days_on_watchlist": 13,
       "keyword_hit": false,
       "news_sentiment": null,
       "news": [
-        "Cathie Wood Buys the Dip in CoreWeave, Sells Palantir Stock: Ark Also Trade",
-        "AOC Says Five Guys in Tuxedos Shouldn\u2019t Control the Economy: \u2018We Need to Ch",
-        "Nvidia at 11X Earnings? One Wall Street Bull Says Investors Are Getting a R"
+        "Wells Fargo Provides $305 Million Loan for 55 Broad Street Recapitalization",
+        "Wells Fargo & Company Declares Cash Dividends on Preferred Stock",
+        "Wells Fargo Innovation Incubator (IN2) Partners with Prime to Advance Data "
       ]
     },
     {
-      "ticker": "WFC",
-      "price": 85.78,
-      "ma15": 84.68,
-      "ma65": 84.74,
-      "gap_pct": -0.08,
-      "avg_vol": 867079,
-      "rsi": 55.8,
+      "ticker": "AMZN",
+      "price": 266.58,
+      "ma15": 257.46,
+      "ma65": 256.06,
+      "gap_pct": 0.55,
+      "avg_vol": 1956835,
+      "rsi": 57.3,
       "rsi_label": "neutral",
-      "vsurge": 0.57,
-      "freshness": "NEAR CROSS",
+      "vsurge": 0.53,
+      "freshness": "1 DAY AGO",
       "added_date": "2026-11-01",
-      "days_on_watchlist": 12,
+      "days_on_watchlist": 13,
       "keyword_hit": false,
-      "news_sentiment": "positive",
+      "news_sentiment": null,
       "news": [
-        "Wells Fargo Supports Silver Lining's '25 Stories of Small Business Resilien",
-        "Americans' Credit Card Debt Climbs to Record $1.29 Trillion While US Househ",
-        "Wells Fargo Securities Downgrades The Hartford Financial Services Group"
+        "Amazon YVR2 Fulfillment Center Workers Covered by Binding Collective Agreem",
+        "Amazon Developing 'World Product Graph' to Expand Shopping Data",
+        "\u2018Amazon Revives Deal With Troubled Data Centre Venture Backed By Rick Perry"
       ]
     },
     {
       "ticker": "TSLA",
-      "price": 397.43,
-      "ma15": 387.58,
-      "ma65": 368.77,
-      "gap_pct": 5.1,
-      "avg_vol": 969162,
-      "rsi": 56.5,
+      "price": 390.24,
+      "ma15": 388.79,
+      "ma65": 369.55,
+      "gap_pct": 5.21,
+      "avg_vol": 966631,
+      "rsi": 53.5,
       "rsi_label": "neutral",
-      "vsurge": 0.81,
+      "vsurge": 1.02,
       "freshness": "UPTREND",
       "added_date": "2026-11-01",
-      "days_on_watchlist": 12,
-      "keyword_hit": false,
-      "news_sentiment": "positive",
-      "news": [
-        "Tesla Launches Over 20 New Merchandise Products for Holidays and Some are A",
-        "From AI Chips to Rocket Ships: Will Jensen Huang Join Elon Musk?",
-        "AOC Says Five Guys in Tuxedos Shouldn\u2019t Control the Economy: \u2018We Need to Ch"
-      ]
-    },
-    {
-      "ticker": "PYPL",
-      "price": 58.3,
-      "ma15": 58.03,
-      "ma65": 56.41,
-      "gap_pct": 2.88,
-      "avg_vol": 506785,
-      "rsi": 53.9,
-      "rsi_label": "neutral",
-      "vsurge": 0.61,
-      "freshness": "UPTREND",
-      "added_date": "2026-11-01",
-      "days_on_watchlist": 12,
+      "days_on_watchlist": 13,
       "keyword_hit": false,
       "news_sentiment": null,
       "news": [
-        "PayPal Partners With Workday to Integrate Direct Deposit Services",
-        "Daiwa Securities Adjusts Price Target on PayPal to $60 From $59",
-        "Michael Burry\u2019s Portfolio: What the \u2018Big Short\u2019 Investor Owns Now"
+        "Nancy Pelosi\u2019s Nvidia Bet Just Cost Her Most Of A Year\u2019s Pay \u2014 Thanks To Je",
+        "Texas Attorney General Threatens Potential Tesla-SpaceX Merger",
+        "Elon Musk's SpaceX\u2013Tesla Merger 'Almost Inconceivable' to Avoid, Biographer"
       ]
     }
   ],
