@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-14T03:27:23Z",
-  "generated_date": "2026-11-14",
+  "generated_at": "2026-11-17T05:10:17Z",
+  "generated_date": "2026-11-17",
   "universe_size": 89,
   "universe_groups": {
     "AI / Tech": [
@@ -128,65 +128,44 @@
   "results": [
     {
       "ticker": "WFC",
-      "price": 86.05,
-      "ma15": 84.92,
-      "ma65": 84.71,
-      "gap_pct": 0.25,
-      "avg_vol": 768995,
-      "rsi": 56.8,
+      "price": 84.86,
+      "ma15": 85.07,
+      "ma65": 84.65,
+      "gap_pct": 0.49,
+      "avg_vol": 726542,
+      "rsi": 51.6,
       "rsi_label": "neutral",
-      "vsurge": 0.65,
-      "freshness": "TODAY",
+      "vsurge": 0.58,
+      "freshness": "1 DAY AGO",
       "added_date": "2026-11-01",
-      "days_on_watchlist": 13,
+      "days_on_watchlist": 16,
       "keyword_hit": false,
       "news_sentiment": null,
       "news": [
-        "Wells Fargo Provides $305 Million Loan for 55 Broad Street Recapitalization",
-        "Wells Fargo & Company Declares Cash Dividends on Preferred Stock",
-        "Wells Fargo Innovation Incubator (IN2) Partners with Prime to Advance Data "
+        "Wells Fargo Initiates Coverage of Super Group",
+        "Wells Fargo and Other Major Banks Experience Online Access Issues",
+        "Wells Fargo Adjusts Price Target on 3M"
       ]
     },
     {
       "ticker": "AMZN",
-      "price": 266.58,
-      "ma15": 257.46,
-      "ma65": 256.06,
-      "gap_pct": 0.55,
-      "avg_vol": 1956835,
-      "rsi": 57.3,
+      "price": 257.8,
+      "ma15": 258.03,
+      "ma65": 255.99,
+      "gap_pct": 0.8,
+      "avg_vol": 1972837,
+      "rsi": 49.6,
       "rsi_label": "neutral",
-      "vsurge": 0.53,
-      "freshness": "1 DAY AGO",
+      "vsurge": 1.08,
+      "freshness": "2 DAYS AGO",
       "added_date": "2026-11-01",
-      "days_on_watchlist": 13,
+      "days_on_watchlist": 16,
       "keyword_hit": false,
-      "news_sentiment": null,
+      "news_sentiment": "positive",
       "news": [
-        "Amazon YVR2 Fulfillment Center Workers Covered by Binding Collective Agreem",
-        "Amazon Developing 'World Product Graph' to Expand Shopping Data",
-        "\u2018Amazon Revives Deal With Troubled Data Centre Venture Backed By Rick Perry"
-      ]
-    },
-    {
-      "ticker": "TSLA",
-      "price": 390.24,
-      "ma15": 388.79,
-      "ma65": 369.55,
-      "gap_pct": 5.21,
-      "avg_vol": 966631,
-      "rsi": 53.5,
-      "rsi_label": "neutral",
-      "vsurge": 1.02,
-      "freshness": "UPTREND",
-      "added_date": "2026-11-01",
-      "days_on_watchlist": 13,
-      "keyword_hit": false,
-      "news_sentiment": null,
-      "news": [
-        "Nancy Pelosi\u2019s Nvidia Bet Just Cost Her Most Of A Year\u2019s Pay \u2014 Thanks To Je",
-        "Texas Attorney General Threatens Potential Tesla-SpaceX Merger",
-        "Elon Musk's SpaceX\u2013Tesla Merger 'Almost Inconceivable' to Avoid, Biographer"
+        "Teamsters Organize Rally for Terminated Amazon Delivery Drivers in New York",
+        "Instagram Launches Integration for Amazon Affiliate Links",
+        "Amnesty International Reports Continued Labor Issues at Amazon Saudi Arabia"
       ]
     }
   ],
