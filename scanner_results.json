@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-17T05:10:17Z",
-  "generated_date": "2026-11-17",
+  "generated_at": "2026-11-18T04:37:45Z",
+  "generated_date": "2026-11-18",
   "universe_size": 89,
   "universe_groups": {
     "AI / Tech": [
@@ -128,44 +128,23 @@
   "results": [
     {
       "ticker": "WFC",
-      "price": 84.86,
+      "price": 82.72,
       "ma15": 85.07,
-      "ma65": 84.65,
-      "gap_pct": 0.49,
-      "avg_vol": 726542,
-      "rsi": 51.6,
+      "ma65": 84.58,
+      "gap_pct": 0.59,
+      "avg_vol": 697386,
+      "rsi": 43.8,
       "rsi_label": "neutral",
-      "vsurge": 0.58,
-      "freshness": "1 DAY AGO",
+      "vsurge": 0.8,
+      "freshness": "2 DAYS AGO",
       "added_date": "2026-11-01",
-      "days_on_watchlist": 16,
+      "days_on_watchlist": 17,
       "keyword_hit": false,
       "news_sentiment": null,
       "news": [
-        "Wells Fargo Initiates Coverage of Super Group",
-        "Wells Fargo and Other Major Banks Experience Online Access Issues",
-        "Wells Fargo Adjusts Price Target on 3M"
-      ]
-    },
-    {
-      "ticker": "AMZN",
-      "price": 257.8,
-      "ma15": 258.03,
-      "ma65": 255.99,
-      "gap_pct": 0.8,
-      "avg_vol": 1972837,
-      "rsi": 49.6,
-      "rsi_label": "neutral",
-      "vsurge": 1.08,
-      "freshness": "2 DAYS AGO",
-      "added_date": "2026-11-01",
-      "days_on_watchlist": 16,
-      "keyword_hit": false,
-      "news_sentiment": "positive",
-      "news": [
-        "Teamsters Organize Rally for Terminated Amazon Delivery Drivers in New York",
-        "Instagram Launches Integration for Amazon Affiliate Links",
-        "Amnesty International Reports Continued Labor Issues at Amazon Saudi Arabia"
+        "Wells Fargo Experiences Service Disruptions Following JPMorgan Chase Softwa",
+        "Wells Fargo Strategists Forecast Deceleration in EPS Growth",
+        "Wells Fargo Initiates Coverage of Super Group"
       ]
     }
   ],
