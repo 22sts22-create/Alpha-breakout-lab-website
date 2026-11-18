@@ -1,0 +1,104 @@
+{
+  "scenarios": [
+    {
+      "id": "cat_001",
+      "label": "Mystery Catalyst #1",
+      "file": "cat_001.json"
+    },
+    {
+      "id": "cat_002",
+      "label": "Mystery Catalyst #2",
+      "file": "cat_002.json"
+    },
+    {
+      "id": "cat_003",
+      "label": "Mystery Catalyst #3",
+      "file": "cat_003.json"
+    },
+    {
+      "id": "cat_004",
+      "label": "Mystery Catalyst #4",
+      "file": "cat_004.json"
+    },
+    {
+      "id": "cat_005",
+      "label": "Mystery Catalyst #5",
+      "file": "cat_005.json"
+    },
+    {
+      "id": "cat_006",
+      "label": "Mystery Catalyst #6",
+      "file": "cat_006.json"
+    },
+    {
+      "id": "cat_007",
+      "label": "Mystery Catalyst #7",
+      "file": "cat_007.json"
+    },
+    {
+      "id": "cat_008",
+      "label": "Mystery Catalyst #8",
+      "file": "cat_008.json"
+    },
+    {
+      "id": "cat_009",
+      "label": "Mystery Catalyst #9",
+      "file": "cat_009.json"
+    },
+    {
+      "id": "cat_010",
+      "label": "Mystery Catalyst #10",
+      "file": "cat_010.json"
+    },
+    {
+      "id": "cat_011",
+      "label": "Mystery Catalyst #11",
+      "file": "cat_011.json"
+    },
+    {
+      "id": "cat_012",
+      "label": "Mystery Catalyst #12",
+      "file": "cat_012.json"
+    },
+    {
+      "id": "cat_013",
+      "label": "Mystery Catalyst #13",
+      "file": "cat_013.json"
+    },
+    {
+      "id": "cat_014",
+      "label": "Mystery Catalyst #14",
+      "file": "cat_014.json"
+    },
+    {
+      "id": "cat_015",
+      "label": "Mystery Catalyst #15",
+      "file": "cat_015.json"
+    },
+    {
+      "id": "cat_016",
+      "label": "Mystery Catalyst #16",
+      "file": "cat_016.json"
+    },
+    {
+      "id": "cat_017",
+      "label": "Mystery Catalyst #17",
+      "file": "cat_017.json"
+    },
+    {
+      "id": "cat_018",
+      "label": "Mystery Catalyst #18",
+      "file": "cat_018.json"
+    },
+    {
+      "id": "cat_019",
+      "label": "Mystery Catalyst #19",
+      "file": "cat_019.json"
+    },
+    {
+      "id": "cat_020",
+      "label": "Mystery Catalyst #20",
+      "file": "cat_020.json"
+    }
+  ]
+}
