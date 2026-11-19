@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-18T04:37:45Z",
-  "generated_date": "2026-11-18",
-  "universe_size": 89,
+  "generated_at": "2026-11-19T04:20:57Z",
+  "generated_date": "2026-11-19",
+  "universe_size": 90,
   "universe_groups": {
     "AI / Tech": [
       "NVDA",
@@ -104,7 +104,8 @@
       "HON",
       "MMM",
       "GE",
-      "ETN"
+      "ETN",
+      "BOBS"
     ],
     "Momentum": [
       "CADL",
@@ -127,24 +128,24 @@
   },
   "results": [
     {
-      "ticker": "WFC",
-      "price": 82.72,
-      "ma15": 85.07,
-      "ma65": 84.58,
-      "gap_pct": 0.59,
-      "avg_vol": 697386,
-      "rsi": 43.8,
+      "ticker": "AMZN",
+      "price": 267.66,
+      "ma15": 259.22,
+      "ma65": 256.06,
+      "gap_pct": 1.23,
+      "avg_vol": 1972431,
+      "rsi": 57.1,
       "rsi_label": "neutral",
-      "vsurge": 0.8,
-      "freshness": "2 DAYS AGO",
+      "vsurge": 0.79,
+      "freshness": "UPTREND",
       "added_date": "2026-11-01",
-      "days_on_watchlist": 17,
+      "days_on_watchlist": 18,
       "keyword_hit": false,
-      "news_sentiment": null,
+      "news_sentiment": "positive",
       "news": [
-        "Wells Fargo Experiences Service Disruptions Following JPMorgan Chase Softwa",
-        "Wells Fargo Strategists Forecast Deceleration in EPS Growth",
-        "Wells Fargo Initiates Coverage of Super Group"
+        "Amazon Announces $7 Billion Renewable Energy Investment in India",
+        "Infoblox Integrates Threat Defense with Amazon Route 53 DNS Firewall",
+        "Amazon Ads Expands Holiday Sponsorship Program"
       ]
     }
   ],
