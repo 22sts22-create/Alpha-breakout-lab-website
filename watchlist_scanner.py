@@ -137,7 +137,7 @@ WATCHLIST_GROUPS = {
     "Consumer":         ["AMZN","META","GOOGL","NFLX","SPOT","SNAP","PINS","SBUX"],
     "Finance":          ["JPM","BAC","GS","MS","C","WFC"],
     "Healthcare":       ["UNH","CVS","HCA","THC"],
-    "Industrial":       ["CAT","DE","HON","MMM","GE","ETN"],
+    "Industrial":       ["CAT","DE","HON","MMM","GE","ETN","BOBS"],
     "Momentum":         ["CADL","TSHA","SHOP","APP","COIN","MSTR","HUDI","IIPR","BULL"],
 }
 # Flatten to a de-duplicated scan list (preserves order, drops any repeats).
