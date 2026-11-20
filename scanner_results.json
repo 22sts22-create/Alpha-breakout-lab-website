@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-19T04:20:57Z",
-  "generated_date": "2026-11-19",
+  "generated_at": "2026-11-20T04:08:48Z",
+  "generated_date": "2026-11-20",
   "universe_size": 90,
   "universe_groups": {
     "AI / Tech": [
@@ -126,28 +126,6 @@
     "min_volume": 500000,
     "strategy": "MA15 x MA65 crossover"
   },
-  "results": [
-    {
-      "ticker": "AMZN",
-      "price": 267.66,
-      "ma15": 259.22,
-      "ma65": 256.06,
-      "gap_pct": 1.23,
-      "avg_vol": 1972431,
-      "rsi": 57.1,
-      "rsi_label": "neutral",
-      "vsurge": 0.79,
-      "freshness": "UPTREND",
-      "added_date": "2026-11-01",
-      "days_on_watchlist": 18,
-      "keyword_hit": false,
-      "news_sentiment": "positive",
-      "news": [
-        "Amazon Announces $7 Billion Renewable Energy Investment in India",
-        "Infoblox Integrates Threat Defense with Amazon Route 53 DNS Firewall",
-        "Amazon Ads Expands Holiday Sponsorship Program"
-      ]
-    }
-  ],
+  "results": [],
   "news_hits": []
 }
